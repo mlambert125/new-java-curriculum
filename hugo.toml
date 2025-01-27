@@ -2,3 +2,9 @@ theme = 'hugo-theme-relearn'
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+
+[params]
+themeVariant = 'relearn-light'
+
+[markup.goldmark.renderer]
+unsafe = true
