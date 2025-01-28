@@ -8,9 +8,21 @@ weight = 50
 
 ### Competency:
 
+Java Basics
+
 ### Learning Objectives:
 
+- I can write java applications that make use of Java's collection classes.
+
 ## Introduction
+
+When writing java applications, we sometimes need to store several values together in a single variable so that they
+can be accessed and manipulated as a group. You have likely used arrays to do this in the past, but Java provides
+a number of other collection classes that can be used to store and manipulate groups of values. In this lesson, we will
+explore some of the most commonly used collection classes in Java.
+
+This lesson assumes that you have a basic understanding of how to write simple Java programs using IntelliJ, and that
+you are familiar with core language concepts such as variables, data types, and control structures.
 
 ## Section 1
 
