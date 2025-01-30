@@ -24,7 +24,9 @@ explore some of the most commonly used collection classes in Java.
 This lesson assumes that you have a basic understanding of how to write simple Java programs using IntelliJ, and that
 you are familiar with core language concepts such as variables, data types, and control structures.
 
-## Section 1
+## Arrays
+
+
 
 ### Check For Understanding 1
 
