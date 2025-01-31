@@ -1,7 +1,7 @@
 theme = 'hugo-theme-relearn'
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'New Java'
+title = 'Java Curriculum'
 
 [params]
 themeVariant = 'relearn-light'

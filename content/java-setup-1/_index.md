@@ -49,23 +49,23 @@ pipelines utilizing Hadoop, even the controller for NASA’s Maestro Mars Rover!
 In this lesson we will dive deeper into Java’s execution system, explore its foundational principles and set up the
 tools required to get started building our very own Java applications!
 
-    ## How Java Works
+## How Java Works
 
-    - Key Concepts
-    - What makes Java different from other programming languages
-    - Java can run on essentially any computer due to a unique ability to run platform independent bytecode.
-    - The JRE, JVM and JDK, which houses all of the Java software, work in conjunction to translate the data back and
-    forth and provide the proper resources necessary to bring a Java app to life on whatever operating system it needs
-    to live on.
+- Key Concepts
+- What makes Java different from other programming languages
+- Java can run on essentially any computer due to a unique ability to run platform independent bytecode.
+- The JRE, JVM and JDK, which houses all of the Java software, work in conjunction to translate the data back and
+forth and provide the proper resources necessary to bring a Java app to life on whatever operating system it needs
+to live on.
 
-    ### The Java Trifecta of Requirements: JRE, JVM, and JDK
+### The Java Trifecta of Requirements: JRE, JVM, and JDK
 
 Java requires three software platform components for any Java program to run successfully. These are the Java Runtime
 Environment (JRE),  Java Virtual Machine (JVM) and the Java Development Kit (JDK), a veritable triforce when combined.
 Let’s take a look at why each of these components are necessary and how they work together to help bring a Java app to
 life.
 
-    #### Java Runtime Environment (JRE)
+#### Java Runtime Environment (JRE)
 
 The JRE is the underlying technology that communicates between the Java program and the operating system. Think of it
 like the translator and ambassador, complete with gifts. Software programs need runtime environments that provide
@@ -76,15 +76,15 @@ code can run on any OS without needing further modifications - write once, run e
 The JRE interacts with the Java Development Kit (JDK - we’ll circle back to that) to create a sustainable runtime
 environment that runs Java program files on any machine. The JRE uses three core components to work:
 
-    - Bytecode verifier
-    - The compiler that verifies your written Java code for accuracy before loading it into the JVM
-    - Interpreter
-    - Once the bytecode loads successfully, the Java interpreter creates the JVM instance that runs the Java program on
-    the machine.
-    - ClassLoader
-    - Collection of Class libraries
+- Bytecode verifier
+- The compiler that verifies your written Java code for accuracy before loading it into the JVM
+- Interpreter
+- Once the bytecode loads successfully, the Java interpreter creates the JVM instance that runs the Java program on
+the machine.
+- ClassLoader
+- Collection of Class libraries
 
-    #### Java Virtual Machine (JVM)
+#### Java Virtual Machine (JVM)
 
 The Java Virtual Machine is exactly as advertised: a virtual machine that enables a computer to run Java programs as
 well as programs in other languages that compile to Java bytecode. This compiled Java bytecode is given to the JVM to
@@ -92,7 +92,7 @@ read and translate into machine code, which can then be read by the computer and
 settings can also be altered to manage program resources when the Java application runs, such as changing the JVM
 memory setting to see how much internal memory the Java application uses at runtime. 
 
-    #### Java Development Kit (JDK)
+#### Java Development Kit (JDK)
 
 The third and final piece of this trifecta is the **Java Development Kit**, where everything comes together. The JDK is
 a collection of software tools used for developing Java applications, namely the Java compiler **javac** and our good
@@ -100,32 +100,32 @@ friend the **Java Virtual Machine** and **Java Runtime Environment** itself. Thi
 all fits together like a well oiled machine and it is with the installation of the JDK where we will begin our Java
 development journey.
 
-    ##### Included in the JDK:
-    - [Development tools](https://docs.oracle.com/en/java/javase/11/tools/tools-and-command-reference.html)
-    - javac - compiler
-    - java - launches a Java application
-    - javadoc -generates HTML pages of API docs from Java source files
-    - Jar - creates an archive for classes and resources, and manipulates or restores individual classes or resources
-    from an archive
-    - JRE
-    - Bytecode verifier
-    - Libraries
-    - JVM
-    - Java interpreter
-    - Garbage collector
-    - [JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation) compiler
+##### Included in the JDK:
+- [Development tools](https://docs.oracle.com/en/java/javase/11/tools/tools-and-command-reference.html)
+- javac - compiler
+- java - launches a Java application
+- javadoc -generates HTML pages of API docs from Java source files
+- Jar - creates an archive for classes and resources, and manipulates or restores individual classes or resources
+from an archive
+- JRE
+- Bytecode verifier
+- Libraries
+- JVM
+- Java interpreter
+- Garbage collector
+- [JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation) compiler
 
 Let’s break this Java process down one more time!
 
-    ##### Steps to create a java application:
-    - Human write code in Java
-    - JDK compiles Java code into bytecode
-    - JRE verifies bytecode, loads into JVM
-    - In the JVM, bytecode is translated to machine code by interpreter
-    - Computer reads and executes machine code
-    - Celebration!
+##### Steps to create a java application:
+- Human write code in Java
+- JDK compiles Java code into bytecode
+- JRE verifies bytecode, loads into JVM
+- In the JVM, bytecode is translated to machine code by interpreter
+- Computer reads and executes machine code
+- Celebration!
 
-    <figure>
+<figure>
 
 ![compiler](compiler.gif)
 

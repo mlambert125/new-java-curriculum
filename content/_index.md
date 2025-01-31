@@ -3,4 +3,5 @@ title = ""
 type = "home"
 +++
 
-This is your new home page.
+![Java](java.svg)
+This is a hugo site for developing and creating the new java curriculum.
