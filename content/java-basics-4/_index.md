@@ -187,42 +187,121 @@ do {
 ...
 ```
 
+### The `for` Loop
+
+Another common loop in Java is the `for` loop. The `for` loop allows us to repeat a block of code a specific number of
+times. The `for` loop has three parts: the initialization, the condition, and the update. For example:
+
+```java
+...
+for (int i = 0; i < 10; i++) {
+    System.out.println("This is iteration " + i));
+}
+...
+```
+
+The `for` loop is a more complex loop structure than the `while` and `do while` loops.  It is really just a shorthand
+for a common pattern of a while loop that initializes a variable, checks a condition, and updates the variable each
+iteration.  The initialization is done before the loop starts, the condition is checked before each iteration, and the
+update is done after each iteration.  Each part of the for loop is separated by a semicolon `;` in that order:
+
+```java
+for (initialization; condition; update) { ... }
+```
+
+The equivalent while loop would look like this:
+
+```java
+int i = 0;  // initialization
+while (i < 10) {  // condition
+    System.out.println("This is iteration " + i);
+    i++; // update
+}
+```
+
+### For Loops with Arrays
+
+One common use of the `for` loop is to iterate over the elements of an array.  For example:
+
+```java
+String[] names = {"Alice", "Bob", "Charlie", "David"};
+for (int i = 0; i < names.length; i++) {
+    String currentName = names[i];
+    System.out.println(currentName);
+}
+```
+
+This pattern is so common that Java provides a special syntax for iterating over arrays called the for-each loop.  The
+for-each loop is a simpler way to iterate over the elements of an array.  For example:
+
+```java
+String[] names = {"Alice", "Bob", "Charlie", "David"};
+for (String name : names) {
+    System.out.println(name);
+}
+```
+
+Both of these loops will print each name in the `names` array to the console.  Both syntaxes are very common, but you
+will usually see the for-each loop when dealing with newer java code.
+
+### Break and Continue
+
+In addition to the basic loop structures, Java provides two special keywords that can be used inside loops to control
+the flow of execution. The `break` keyword allows us to exit a loop prematurely, while the `continue` keyword allows us
+to skip the rest of the current iteration and move on to the next iteration.  One way to think of these keywords is that
+`break` jumps to the end of the loop (and out), while `continue` jumps to the beginning of the loop (and in).
+
+For example:
+
+```java
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    System.out.println("This is iteration " + i);
+}
+```
+
+This loop will print "This is iteration 0", "This is iteration 1", "This is iteration 2", "This is iteration 3", and
+"This is iteration 4" to the console, and then exit the loop when `i` is equal to 5.
+
+```java
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    System.out.println("This is iteration " + i);
+}
+```
+
+This loop will print "This is iteration 0", "This is iteration 1", "This is iteration 2", "This is iteration 3", and
+"This is iteration 4" to the console, and then skip printing "This is iteration 5" and continue with "This is iteration
+6", "This is iteration 7", "This is iteration 8", and "This is iteration 9".
+
+
 ### Check For Understanding 2
 
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
-
-## Section 3
-
-### Check For Understanding 3
-
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
-
-## Reflection Task
-- Prompt: 
-- Expected Outcomes: 
-    - **Green**: 
-    - **Yellow**: 
-    - **Red**: 
+- Question/Exercise:  Which kind of loop is best suited to print a rocket ship countdown from 10 to 1?
+- Expected Output/Answer: A `for` loop
+- Common Misconceptions to Address: Some students may think that a `while` loop is better because it is simpler.
+However, the `for` loop is better suited to this task because it is designed to repeat a block of code a specific number
+of times.
 
 ## Sharing Task
 
-- Activity Description:
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.):
-- Tools:
-- Time Estimate:
+- Activity Description: Loop brainstorming
+- Prompt: Brainstorm an example of a real-world situation where you would use each of the three types of loops.
+- Format (individual, pair programming, presentation, group discussion, etc.): Group discussion
+- Tools:  Whiteboard or paper
+- Time Estimate: 15 minutes
 - Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+    - **Green**: Groups can come up with creative and realistic examples for each type of loop.
+    - **Yellow**: Group struggle to come up with examples for one or more types of loops.
+    - **Red**: Group have difficulty understanding the concept of loops and their real-world applications.
 
 ## Practice/Project Task
 
-- Activity Description:
+- Activity Description: 
 - Prompt:
 - Format (individual, pair programming, presentation, group discussion, etc.):
 - Tools:

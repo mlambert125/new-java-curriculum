@@ -14,7 +14,6 @@ Java Basics
 
 - I can write java console applications that perform basic input and output operations.
 - I can make use of variables in java to store and manipulate data.
-- I can use basic conditional and iterative control structures in java.
 
 ## Introduction
 
@@ -136,29 +135,6 @@ Hello, John!
 - Question/Exercise:
 - Expected Output/Answer:
 - Common Misconceptions to Address:
-
-## Using Conditional Structures
-
-### Check For Understanding 2
-
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
-
-## Using Iteration Structures
-
-### Check For Understanding 3
-
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
-
-## Reflection Task
-- Prompt: 
-- Expected Outcomes: 
-    - **Green**: 
-    - **Yellow**: 
-    - **Red**: 
 
 ## Sharing Task
 
