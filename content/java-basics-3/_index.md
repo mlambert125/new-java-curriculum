@@ -12,19 +12,51 @@ Java Basics
 
 ### Learning Objectives:
 
-- I can write java applications that make use of Java's collection classes.
+- I can write java applications that make use of Java's arrays and collection classes.
 
 ## Introduction
 
 When writing java applications, we sometimes need to store several values together in a single variable so that they
-can be accessed and manipulated as a group. You have likely used arrays to do this in the past, but Java provides
-a number of other collection classes that can be used to store and manipulate groups of values. In this lesson, we will
-explore some of the most commonly used collection classes in Java.
+can be processed together. Java provides two ways to do this: arrays and collections. In this lesson, we will learn
+how to use arrays and collections in Java.
 
 This lesson assumes that you have a basic understanding of how to write simple Java programs using IntelliJ, and that
 you are familiar with core language concepts such as variables, data types, and control structures.
 
-## Section 1
+## Arrays
+
+Sometimes in an application, it makes sense to store multiple values of the same type together in a single variable
+and to primarily treat them as a single entity. This is where arrays come in. An array is a data structure that can
+store multiple values of the same type together in a single variable. Each value in an array is called an element, and
+each element is accessed by its index. The index of an element is a number that represents the position of the element
+in the array. The first element in an array has an index of 0, the second element has an index of 1, and so on.
+
+Here is an example of how to declare and initialize an array in Java:
+
+```java
+int[] numbers = new int[5];
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+numbers[3] = 40;
+numbers[4] = 50;
+```
+
+In this example, we declare an array of integers called `numbers` that can store 5 integers. We then assign values to
+each element of the array using the index notation `numbers[index]`.
+
+Notice that the size of the array is specified when the array is declared. Once an array is created, its size cannot be
+changed. If you need to store more values than the size of the array, you will need to create a new array with a larger
+size and copy the values from the old array to the new array.
+
+Let's look at another way to declare and initialize an array in Java:
+
+```java
+int[] numbers = {10, 20, 30, 40, 50};
+```
+
+In this example, we declare an array of integers called `numbers` and initialize it with the values 10, 20, 30, 40,
+and 50. This is the same as the previous example, but it is more concise.
 
 ### Check For Understanding 1
 

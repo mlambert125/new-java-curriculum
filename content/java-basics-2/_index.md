@@ -14,7 +14,6 @@ Java Basics
 
 - I can write java console applications that perform basic input and output operations.
 - I can make use of variables in java to store and manipulate data.
-- I can use basic conditional and iterative control structures in java.
 
 ## Introduction
 
@@ -23,11 +22,10 @@ are ready to start writing Java programs.  In this lesson, we will explore the b
 we will learn to write basic Java console applications that take input from the user and display output to the console.
 
 This lesson assumes that you have installed and familiarized yourself with the the IntelliJ IDE and that you know
-how to create a new project in IntelliJ and how to connect and push your project to GitHub.
+how to create a new project in IntelliJ and how to connect and push your project to GitHub, and that you understand
+the concept of data types in Java.
 
-## Reading and Writing to the Console
-
-### Writing to the Console
+## Writing to the Console
 
 When you create a new Java project in IntelliJ, you will see a file named `Main.java` in the `src` folder. This is the
 entry point of your Java application. This file defines a class named `Main` that contains a method named `main`.  We
@@ -81,7 +79,14 @@ Tacos
 Ice Cream
 ```
 
-### Reading from the Console
+### Check For Understanding 1
+
+- Question/Exercise: What is the `main` method in a Java program?
+
+- Expected Output/Answer: The `main` method is the entry point of a Java
+program.  It is where the program starts running.
+
+## Reading from the Console
 
 Now that we know how to write to the console, let's learn how to read input from the user.  We will use the
 `Scanner` class to do this.  The `Scanner` class is part of the `java.util` package, so we need to import it at the top
@@ -131,58 +136,141 @@ Enter your name: John
 Hello, John!
 ```
 
-### Check For Understanding 1
+Notice on the line `String name = scanner.nextLine();` that we are reading a line of text from the user and storing it
+in a variable named `name`.  We then use this variable to print a greeting to the console.  On this line, the type
+`String` is the type of the variable `name`.  When we first *declare* a variable, we must specify its type.  If you
+look at the first line of our code in this method, you'll notice we declared a variable there as well - a variable
+named `scanner` with the type `Scanner`.
 
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
+We only put types on variables when we first declare them.  After that, we can use the variable without the type.  We
+could rewrite the code above to separate the declaration of the variables from their use like this:
 
-## Using Conditional Structures
+```java
+...
+public static void main(String[] args) {
+    Scanner scanner;
+    String name;
+
+    scanner = new Scanner(System.in);
+    System.out.print("Enter your name: ");
+    name = scanner.nextLine();
+    System.out.println("Hello, " + name + "!");
+}
+...
+```
+
+We typically write our code the first way for simplicity and conciseness, but it is important to understand that the
+second way is also valid and that the declaration of a variable is separate from its use.
 
 ### Check For Understanding 2
 
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
+- Question/Exercise: What is the object that we use to read input from the user in Java?
 
-## Using Iteration Structures
+- Expected Output/Answer: The `Scanner` object.
+
+## Making a Simple Payment Calculator
+
+Now that we know how to read input from the user and display output to the console, let's write a simple program that
+calculates the total cost of a purchase.  We will prompt the user to enter the price of an item and the number of items
+they want to purchase, and then we will calculate the total cost and display it to the console.
+
+Instead of using `Scanner.nextLine()` (which reads a String from the keyboard input), we will use
+`Scanner.nextDouble()` to read a double value from the user.  We will also use
+the `*` operator to multiply two numbers together.  Here is the code:
+
+```java
+...
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    // Prompt the user to enter the price of the item
+    System.out.print("Enter the price of the item: ");
+    double price = scanner.nextDouble();
+
+    // Prompt the user to enter the quantity of the item
+    System.out.print("Enter the quantity of the item: ");
+    double quantity = scanner.nextDouble();
+
+    // Calculate the total cost
+    double total = price * quantity;
+    System.out.println("The total cost is: $" + total);
+}
+...
+```
+
+When you run this program, it will prompt you to enter the price of the item and the quantity of the item.  After you
+enter these values and press Enter, it will calculate the total cost and display it to the console:
+
+```bash
+Enter the price of the item: 5.99
+Enter the quantity of the item: 3
+The total cost is: $17.97
+```
+
+> [!NOTE] Comments
+> Notice that there are several lines that start with a `//` in the code.
+> These lines are called *comments*.  Comments are used to explain what the code is doing.  They are ignored by the
+> compiler and are only there to help you understand the code.  It is a good practice to write comments in your code to
+> help you and others understand what the code is doing.
+
+It is important that you spend some time reviewing the code above and make sure you understand how each line works.
+Copy and paste the code into your `Main.java` file and run the program to see it in action.  Throughout all of your
+learning, it is important to actually enter the code into your IDE and run it to see how it works versus just reading
+about it.
 
 ### Check For Understanding 3
 
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
+- Question/Exercise: Where is the type of a variable specified when it is first declared?
 
-## Reflection Task
-- Prompt: 
-- Expected Outcomes: 
-    - **Green**: 
-    - **Yellow**: 
-    - **Red**: 
-
-## Sharing Task
-
-- Activity Description:
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.):
-- Tools:
-- Time Estimate:
-- Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+- Expected Output/Answer: At the beginning of the line where the variable is declared.
 
 ## Practice/Project Task
 
-- Activity Description:
-- Prompt:
+- Activity Description: 
+- Prompt: Write a Java program that prompts the user to enter their age and
+then prints a message to the console that tells them how many years they have
+until they are 100 years old.
 - Format (individual, pair programming, presentation, group discussion, etc.):
-- Tools:
-- Time Estimate:
+- Tools: IntelliJ IDE
+- Time Estimate: 30 minutes
 - Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+    - **Green**: A complete, correctly functioning Java program that prompts the user to enter their age and then
+    prints a message to the console that tells them how many years they have until they are 100 years old.
+    - **Yellow**: The program code is generally on the right track, but there are errors in the code that prevent the
+    application from compiling or running correctly.
+    - **Red**: The program code is incomplete or missing key elements that prevent the application from compiling. 
+    Major syntax errors and/or misunderstanding of the concepts are present.
+
+- Reference Solution (`Main.java` file)
+
+```java
+package org.example;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        int yearsUntil100 = 100 - age;
+        System.out.println("You have " + yearsUntil100 + " years until you are 100 years old.");
+    }
+}
+```
 
 ## Conclusion
 
+In this lesson, we learned how to write Java console applications that take input from the user and display output to
+the console.  We learned how to use the `Scanner` class to read input from the user and how to use the `System.out`
+methods to write output to the console.  We also learned how to declare variables and how to use them to store and
+manipulate data.
+
+With this knowledge, you can now write simple Java programs that perform basic input and output operations.  In the
+lessons to come, you will learn more about variables, data types, and control structures in Java that will help you
+do even more in your applications.
+
+Later, you will learn about methods, objects and classes that will allow you to write more complex and powerful
+programs while keeping your code organized and easy to read.
