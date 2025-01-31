@@ -253,6 +253,23 @@ properties.
     - **Yellow**: The student can define existing types for the properties but chooses some inappropriate ones and/or struggles with the concept of those types being composed into a larger type and/or struggles to give a suitable additional example.
     - **Red**: The student fails to correctly give proper types entirely and can not provide another example.
 
+## Practice/Project Task
+
+- Activity Description: Temp converter
+- Prompt: Write a Java program to convert temperature from Fahrenheit to Celsius degrees. 
+- Format (individual, pair programming, presentation, group discussion, etc.): pair or individual
+- Tools: their IDE
+- Time Estimate: 45 minutes
+- Test Case
+    - Input: **212**
+    - Output: **100**
+- Expected Outcomes: 
+    - **Green**: The program runs correctly and gives proper results.
+    - **Yellow**:  The program runs properly but gives incorrect results due to wrong type choices or logical errors.
+    Or the program does not build/run properly but can trivially be adjusted to operate properly.
+    - **Red**: The program fails to build or run and upon review is not easily fixed and shows large areas of improper
+    syntax and structure.
+
 ## Sharing Task
 
 - Prompt:
@@ -267,23 +284,6 @@ properties.
 | String    | GamerTag          |            |
 | Int       | Score             |            |
 | Boolean   | isOnline          |            |
-
-## Practice/Project Task
-
-- Activity Description: Temp converter
-- Prompt: Write a Java program to convert temperature from Fahrenheit to Celsius degrees. 
-- Format (individual, pair programming, presentation, group discussion, etc.): pair or individual
-- Tools: their IDE
-- Time Estimate:
-- Test Case
-    - Input: **212**
-    - Output: **100**
-- Expected Outcomes: 
-    - **Green**: The program runs correctly and gives proper results.
-    - **Yellow**:  The program runs properly but gives incorrect results due to wrong type choices or logical errors.
-    Or the program does not build/run properly but can trivially be adjusted to operate properly.
-    - **Red**: The program fails to build or run and upon review is not easily fixed and shows large areas of improper
-    syntax and structure.
 
 ## Conclusion
 
