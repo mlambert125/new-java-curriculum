@@ -18,6 +18,10 @@ Object Oriented Programming
 
 ## Introduction
 
+In this lesson, we will learn how to use method overloading and static methods and members in Java to create more
+flexible and powerful classes.  Method overloading allows us to define multiple methods with the same name but
+different numbers or types of parameters, while static methods and members provide non-instance-specific methods and
+properties that belong to the class itself rather than individual instances of the class.
 
 ## The `Person` Class
 
@@ -117,8 +121,6 @@ the number of months in a year that we pass to it.
 
 So far, all the methods and fields we have defined in the `Person` class are instance-specific, meaning they belong to
 individual instances of the `Person` class.  However, we can also define static methods and members that belong to the
-
-
 
 ## Reflection Task
 

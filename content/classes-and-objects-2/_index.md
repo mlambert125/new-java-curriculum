@@ -23,10 +23,6 @@ Classes are the fundamental building blocks in an object-oriented programming la
 primary mechanism that will allow the simple programs you have been writing to grow into more complex, powerful
 programs. In this lesson, we will learn how to create basic classes.
 
-This chapter assumes that you have a basic understanding of how to write simple programs in java and that you can
-use static methods to break up your code into smaller, more manageable pieces, and that you have a comprehensive
-understanding of parameters and return values.
-
 ## Data Classes
 
 Classes let us model and solve many problems, but we will start first with the most fundamental problem - creating

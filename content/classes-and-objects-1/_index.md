@@ -20,9 +20,6 @@ The fundamental building blocks in an object-oriented programming language like 
 You have probably already been using one class in your programs, the `Main` class, and you've been writing all
 of your code in the `main` method. In this lesson, we will learn how to create our own classes and methods.
 
-This chapter assumes that you have a basic understanding of how to write simple programs in java that do not
-use classes or methods outside of the `main` method.
-
 ## Methods
 
 Methods are blocks of code that perform a specific task. They are defined within a class and can be called from
