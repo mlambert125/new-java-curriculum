@@ -23,36 +23,40 @@ working with.  This lesson explores how to create a project in IntelliJ and how 
 repository on our GitHub page so that we can track changes and share our work with others. This lesson assumes that you
 have installed IntelliJ and Git and have a basic understanding of the purpose of these tools.
 
+> [!Note] Refer Back Here!
+> The steps in this lesson are general steps that you can always follow to create a new project in IntelliJ and connect
+> it to a GitHub repository.  You can refer back to this lesson whenever you need to create a new project and connect it
+> to a github repository.
+
 ## Creating a New IntelliJ Project
 
 ### Creating a New Project
 
-Now that we have our tools set up, let’s create a new project.  First, launch IntelliJ.  You will either be presented
-with a dialog prompting you to create a new project, or if you have created a project before, the last project that you
-worked on will be loaded.  If you do not see the **New Project** dialog, you can bring it up by clicking the **File**
+Now that we have our tools set up, let’s create a new project:
+
+1. Launch IntelliJ. 
+2. If you do not immediately see the **New Project** dialog, you can bring it up by clicking the **File**
 menu, and then selecting **New Project**.
 
 ![New Project Dialog](new-project.png)
 
-In this dialog, as shown, enter the name “hello-world” for the project, choose a location on your computer to create
-the project, and choose “Maven” for the build system. 
+3. In this dialog, as shown, enter a name (e.g. “hello-world”) for the project, choose a location on your computer to create
+the project, and choose **Maven** for the build system. 
 
-A new project will be created and the main IDE window will focus showing your loaded project.
+4. A new project will be created and the main IDE window will focus showing your loaded project.
+
+
+### Opening the Main File and Running the Project
 
 ![Main File](main-file.png)
 
-On the left-side of the window, the **Project Explorer** will be shown.  From here, expand folders as shown until you
-find the *Main* file.  Click this file to open it to the right.
-
+1. On the left-side of the window, the **Project Explorer** will be shown.  From here, expand folders as shown until you
+find the *Main* file. 
+2. Click this file to open it to the right. If you look at the content of the loaded file on the right, you will see
+   that this file contains some java code for a simple program that prints the message “Hello Word” to a console screen.
+3. Click the green play button in the top right of the screen to run the project.
 ![Run Project](run-project.png)
-
-You probably don’t know much java at this point, but if you look at the content of the loaded file on the right, you
-will see that this file contains some java code for a simple program that prints the message “Hello Word” to a console
-screen.
-
-We can run this program by clicking the green play button in the top right of the screen.
-
-Once you run the program, a bottom pain will display showing a console with the output of the running program.
+Once you run the program, a bottom pane will display showing a console with the output of the running program.
 
 ![Terminal Output](terminal-output.png)
 
@@ -65,7 +69,6 @@ project to source control to make sure that our changes are tracked and centrall
 can share our code with others.
 
 ### Check for Understanding 1
-
 
 - Question/Exercise: How can we create a new project in IntelliJ now that we have already made our first project?
 
@@ -80,16 +83,16 @@ Now that we can create a java project, we should set up source control hosting f
 committed and pushed up there so we have tracking, and can share access to our code with our classmates, our teammates,
 or even developers from all over the world.
 
-Login to your github account and click the **New** button on the left of your github home page:
+1. Login to your github account and click the **New** button on the left of your github home page:
 
 ![New Repository](new-repository.png)
 
-After clicking the **New** button, you’ll be presented with a dialog asking for details for the repository:
+2. In the new repository dialog, enter a name for your repository, an optional description, and choose **Public** for
+   the visibility.  Leave the final two options set to **none**. 
 
 ![New Repository Dialog](github-create-repository.png)
 
-Enter a name for your repository, an optional description, and choose **Public** for the visibility.  Leave the final
-two options set to **none**.  Finally, click the **Create repository** to create the repository for your project.
+3. Click the **Create repository** to create the repository for your project.
 
 ![Empty Repository](github-empty-repository-url.png)
 
@@ -117,42 +120,44 @@ software.  GitHub is a website owned by Microsoft that hosts git repositories.
 ### Connecting Our Repository
 
 Now that we have created a repository on GitHub for our project, we need to connect our project in IntelliJ to that
-GitHub repository.  The easiest way to do this is to use IntellIJ’s built-in git integration.  On the left of the main
-IntelliJ window, there are icon tabs to switch our project view to other views.  If you don’t see the **Commit** options
-shown below (icon of a circle with a line on either side), click the **…** icon and choose **Commit**.
+GitHub repository.  The easiest way to do this is to use IntellIJ’s built-in git integration. 
+
+1. On the left of the main IntelliJ window, click the **Commit** tab (icon of a circle with a line on either side.) If
+   you don't see the **Commit** options shown below (icon of a circle with a line on either side), click the **…** icon
+   and choose **Commit**.
 
 ![Commit Tab](commit-tab.png)
 
-This tab will allow us to integrate our project with git, and in our case, github.
+2. Once you see this tab, click **Create Git repository**, to make a local repository and bind it to our remote github
+   repository.
 
 ![Commit Tab Create Repository](commit-tab-create-repository.png)
 
-Once you see this tab, click **Create Git repository**, to make a local repository and bind it to our remote github
-repository.
+
+3. The dialog that is shown will default to the location of our project, which is exactly what we want.  Click the
+   **OK** button.
 
 ![Create Git Repository Dialog](create-git-repository-dialog.png)
 
-The dialog that is shown will default to the location of our project, which is exactly what we want.  Click the **OK**
-button.
+4. Back on the tab, check the top checkbox to include all of our code, enter the message “Initial Commit” (or similar)
+   into the textbox and click the **Commit and Push** button. This will commit your changes and then will show a dialog
+   to sync them up to the remote github repository.  The next thing to do is to tell IntelliJ where that repository is. 
 
 ![Commit](commit.png)
 
-Back on the tab, check the top checkbox to include all of our code, enter the message “Initial Commit” (or similar)
-into the textbox and click the **Commit and Push** button.
+5. Click the **Define remote link** in the top-left.
 
 ![Push Dialog](push-dialog.png)
 
-This will commit your changes and then will show a dialog to sync them up to the remote github repository.  The next
-thing to do is to tell IntelliJ where that repository is.  Click the **Define remote link** in the top-left.
+
+6. The default name **origin** is fine, and is what we want since other tools also treat it as default.  For the **URL**,
+    you need to copy the link that we got from GitHub earlier:
 
 ![Define Remote](define-remote.png)
 
-The default name **origin** is fine, and is what we want since other tools also treat it as default.  For the **URL**,
-you need to copy the link that we got from GitHub earlier:
-
 ![GitHub Empty Repository URL](github-empty-repository-url.png)
 
-Once this is entered, click **OK** and then **Push** to sync your changes up to GitHub.  You can verify that this was
+7. Click **OK** and then **Push** to sync your changes up to GitHub.  You can verify that this was
 done correctly by refreshing the GitHub page.  It should now look like this:
 
 ![GitHub Pushed Repository](github-pushed-repository.png)

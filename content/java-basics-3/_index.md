@@ -21,9 +21,6 @@ In this lesson, we will explore how to use conditional statements and loops in J
 execute different blocks of code based on certain conditions, while loops allow us to repeat blocks of code multiple
 times. These are fundamental concepts in programming that enable us to create dynamic and flexible applications.
 
-This lesson assumes that you have a basic understanding of Java syntax and structure, data types and variables in java,
-basic input and output processing in java, and familiarity with the IntelliJ IDE.
-
 ## Conditional Statements
 
 ### The `if` Statement

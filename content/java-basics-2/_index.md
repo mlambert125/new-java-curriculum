@@ -21,9 +21,13 @@ Once you have installed Java and IntelliJ, and have learned the basics of how to
 are ready to start writing Java programs.  In this lesson, we will explore the basic syntax and structure of Java and
 we will learn to write basic Java console applications that take input from the user and display output to the console.
 
-This lesson assumes that you have installed and familiarized yourself with the the IntelliJ IDE and that you know
-how to create a new project in IntelliJ and how to connect and push your project to GitHub, and that you understand
-the concept of data types in Java.
+Writing and reading from the console are a fundamental part of learning to program.  While most of the programs that
+you will be writing in the future will be more complex and will interact with the user in more sophisticated ways, 
+learning basic input and output operations is a good and quick way to get started with Java programming and will 
+provide us with some basic tools to explore the language further before getting into more complex applications.
+
+The examples in this lesson will explore how to write to the console, how to read from the console, and how to use
+variables to store and manipulate data.
 
 ## Writing to the Console
 

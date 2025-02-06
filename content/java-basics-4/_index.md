@@ -17,19 +17,16 @@ Java Basics
 ## Introduction
 
 When writing java applications, we sometimes need to store several values together in a single variable so that they
-can be processed together. Java provides two ways to do this: arrays and collections. In this lesson, we will learn
-how to use arrays and collections in Java.
-
-This lesson assumes that you have a basic understanding of how to write simple Java programs using IntelliJ, and that
-you are familiar with core language concepts such as variables, data types, and control structures.
+can be processed together. In this lesson, we will learn how to use several collection types offered by Java.
 
 ## Arrays
 
-Sometimes in an application, it makes sense to store multiple values of the same type together in a single variable
-and to primarily treat them as a single entity. This is where arrays come in. An array is a data structure that can
-store multiple values of the same type together in a single variable. Each value in an array is called an element, and
-each element is accessed by its index. The index of an element is a number that represents the position of the element
-in the array. The first element in an array has an index of 0, the second element has an index of 1, and so on.
+THe most basic collection type in Java is the array.
+
+An array is a data structure that can store multiple values of the same type together in a single variable. Each value
+in an array is called an element, and each element is accessed by its index. The index of an element is a number that
+represents the position of the element in the array. The first element in an array has an index of 0, the second element
+has an index of 1, and so on.
 
 Here is an example of how to declare and initialize an array in Java:
 
@@ -110,16 +107,14 @@ always start at 0.
 
 ![ArrayLists](array-list.png)
 
-While arrays are fast, and fundamental to the language, they have some
-limitations. One of the main limitations of arrays is that their size is fixed
-once they are created.  They are not good collections for cases where you
-either don't know the number of elements ahead of time, or you expect to
-add/remove items from the collection.  For these cases, Java provides a more
-flexible collection called an ArrayList. An ArrayList is a resizable array that
-can grow or shrink in size as needed.
+While arrays are fast, and fundamental to the language, they have some limitations. One of the main limitations of
+arrays is that their size is fixed once they are created.  They are not good collections for cases where you either
+don't know the number of elements ahead of time, or you expect to add/remove items from the collection.  For these
+cases, Java provides a more flexible collection called an ArrayList. An ArrayList is a resizable array that can grow or
+shrink in size as needed.
 
-ArrayLists are a **Generic Type** in Java. This means that it's time name includes
-a type parameter that specifies the type of elements that the ArrayList can hold.
+ArrayLists are a **Generic Type** in Java. This means that it's time name includes a type parameter that specifies the
+type of elements that the ArrayList can hold.
 
 For example, an ArrayList of Strings is declared as follows:
 

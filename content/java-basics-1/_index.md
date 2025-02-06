@@ -74,16 +74,22 @@ There are eight primitive types in java: **byte**, **short**, **int**, **long**,
 **boolean**.  Six of these types are for storing different types of numbers, and the last two are for storing
 alphanumeric characters, and true/false variables respectively.
 
-| Type            | Description |
-|-----------------|-------------|
-| byte            | Stores a very small whole number between -127 and 128 |
-| short           | Stores a small whole number between -32,768 and 32,767 |
-| int             | Stores a medium whole number between -2,147,483,648 and 2,147,483,647 |
-| long            | Stores a large whole number between -9,223,372,036,854,775,808 and -9,223,372,036,854,775,808 |
-| float           | Stores a medium precision decimal number |
-| double          | Stores a large precision decimal number |
-| char            | Stores a single alpha-numeric character. |
-| boolean         | Stores one of the two values: true or false |
+| Type            | Description | Example |
+|-----------------|--------------|---------|
+| byte            | Stores a very small whole number between -127 and 128 | Number of players in a game | 
+| short           | Stores a small whole number between about -32k and 32k | Number of employees in a large company |
+| int             | Stores a medium whole number between about -2 billion and 2 billion | Number of people in a city |
+| long            | Stores a large whole number between -9 quintillion and 9 quintillion | Number of stars in the galaxy |
+| float           | Stores a medium precision decimal number | Distance in miles between two cities |
+| double          | Stores a large precision decimal number | Distance in meters between two cities |
+| char            | Stores a single alpha-numeric character. | First letter of a person's name |
+| boolean         | Stores one of the two values: true or false | Whether a user is logged in or not |
+
+>[!NOTE] Which Numeric Type?
+> Most of the time, you will use an **int** for whole numbers, and a **double** for decimal numbers.  The smaller and 
+> larger types are used when you need to save memory or need to store very large or very small numbers, and are rarely
+> used in everyday programming.
+
 
 >[!NOTE] Casing
 Primitive data types in Java are all lowercase.
@@ -102,6 +108,9 @@ Primitive data types in Java are all lowercase.
 Primitive data types can be combined to build larger object data types. Some object data types are provided by java
 natively, and some are defined by you, the developer, as appropriate to the problem at hand.  Object data types include
 both state, and a set of methods that can be called to act on the object data.
+
+We will cover custom object data types in a later lesson.  For now, we will focus on the most common object data types
+in java: **String** and **Array**.
 
 >[!NOTE] Syntax Fact
 >Object data types in Java begin with a Capital letter and use “Pascal Casing” where each word in the name also starts
@@ -132,7 +141,21 @@ Once a string has been created, methods belonging to the string type can be call
 String str = "Rutabega"
 ```
 
-![Syntax Description](syntax-description.png)
+| Java Syntax | Description | "Rutabega" Result |
+|-------------|--------------|-------------------|
+| `str.charAt(3)` | Returns the character at the specified index | 'a' |
+| `str.substring(2, 4)` | Returns a new string that is a substring of this string | "ta" |
+| `str.length()` | Returns the length of the string | 8 |
+| `str.indexOf('a')` | Returns the index within this string of the first occurrence of the specified character | 3 |
+| `str.split("b")` | Splits the string into an array of substrings | ["Ruta", "ega"] |
+| `str.toLowerCase()` | Converts all of the characters in this String to lower case | "rutabega" |
+| `str.toUpperCase()` | Converts all of the characters in this String to upper case | "RUTABEGA" |
+| `str.equals("Rutabega")` | Compares this string to the specified object | true |
+| `str.concat(" is a vegetable")` | Concatenates the specified string to the end of this string | "Rutabega is a vegetable" |
+| `str.replace('a', 'o')` | Replaces all occurrences of the specified character with another character | "Rutobego" |
+| `str.trim()` | Removes any leading and trailing whitespace from the string | "Rutabega" |
+| `str.contains("tab")` | Returns true if and only if this string contains the specified sequence of char values | true |
+
 
 ### Arrays
 
@@ -281,9 +304,9 @@ properties.
 
 | Data Type | Example  Variable | Your Example |
 |-----------|-------------------|-------------|
-| String    | GamerTag          |            |
-| Int       | Score             |            |
-| Boolean   | isOnline          |            |
+| `String`    | GamerTag          |            |
+| `int`       | Score             |            |
+| `boolean`   | isOnline          |            |
 
 ## Conclusion
 
