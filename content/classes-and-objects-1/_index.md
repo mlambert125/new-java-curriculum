@@ -12,7 +12,7 @@ Classes and Objects
 
 ### Learning Objectives:
 
-- I can break up a java program into separate functions/methods.
+- I can use methods in a java application to break up functionality and solve more complex problems.
 
 ## Introduction
 

@@ -13,8 +13,6 @@ Intro to Java
 ### Learning Objectives:
 
 - I recognize Java’s relevance in the modern technology atmosphere.
-- I grasp the basic fundamentals of how Java works as both a compiled and interpreted language.
-- I can set up a Java development environment with a proper IDE and connect it to Github.
 
 ## Introduction
 

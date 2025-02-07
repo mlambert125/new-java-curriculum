@@ -12,8 +12,7 @@ Java Basics
 
 ### Learning Objectives:
 
-- I can use conditional statements in Java to control the flow of execution in my programs.
-- I can use loops in Java to repeat blocks of code.
+- I can create java applications that solve problems using loops and conditionals.
 
 ## Introduction
 
@@ -320,3 +319,5 @@ In this lesson, we explored how to use conditional statements and loops in Java.
 execute different blocks of code based on certain conditions, while loops allow us to repeat blocks of code multiple
 times. These are fundamental concepts in programming that enable us to create dynamic and flexible applications.
 
+Now that you have learned about conditional statements and loops, you can start building more complex programs that
+respond to user input, perform calculations, and branch based on different conditions.

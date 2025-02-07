@@ -12,8 +12,7 @@ Java Basics
 
 ### Learning Objectives:
 
-- I can recognize Java data types and when to utilize the proper ones for a given situation.
-- I can manipulate Strings and arrays.
+- I can create java programs that use basic data types to solve simple problems.
 
 ## Introduction
 

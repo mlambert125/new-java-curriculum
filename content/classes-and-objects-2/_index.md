@@ -12,10 +12,7 @@ Classes and Objects
 
 ### Learning Objectives:
 
-- I can create a basic data class in java
-- I can create constructors
-- I can write a more complex class in java that includes methods
-- I can use method overloading in java to make versions of a method that accept different quantities/types of parameters
+- I can write basic classes in java to model composite data types.
 
 ## Introduction
 

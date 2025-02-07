@@ -12,7 +12,7 @@ Java Basics
 
 ### Learning Objectives:
 
-- I can write java applications that make use of Java's arrays and collection classes.
+- I can use built-in collection data structures in a java application
 
 ## Introduction
 

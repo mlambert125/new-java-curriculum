@@ -12,9 +12,7 @@ Object Oriented Programming
 
 ### Learning Objectives:
 
-- I can implement a full class in java with properties and methods
-- I can create constructors
-- I can write a more complex class in java that includes methods
+- I can design and implement a basic class in java and use it in a java application.
 
 ## Introduction
 
@@ -384,4 +382,9 @@ outside the `Person` class (e.g., from the `Main` class).
 
 ## Conclusion
 
+In this lesson, we learned how to create classes in Java using all of the features offered by the Java language.
+
+With classes, we can model complex data structures and group behavior on those data structures with the data itself.
+This is called Object-Oriented Programming (OOP), and it is a powerful paradigm that allows us to write concise and
+well-organized code to solve complex problems.
 

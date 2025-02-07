@@ -12,9 +12,7 @@ Intro to Java
 
 ### Learning Objectives:
 
-- I can create a new project in IntelliJ
-- I can create a new repository on GitHub
-- I can connect an existing IntelliJ project to GitHub
+- I can create and execute simple Java programs with IntelliJ
 
 ## Introduction
 

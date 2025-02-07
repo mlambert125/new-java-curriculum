@@ -13,7 +13,6 @@ Java Basics
 ### Learning Objectives:
 
 - I can write java console applications that perform basic input and output operations.
-- I can make use of variables in java to store and manipulate data.
 
 ## Introduction
 
