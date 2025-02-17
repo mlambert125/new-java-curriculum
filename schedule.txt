@@ -1,0 +1,40 @@
+Done
+    (orientation and compentency map work)
+    java setup 1
+    java setup 2
+    java basics 1
+    java basics 2
+    java basics 3
+    classes and objects 1
+    classes and objects 2
+    oop 1
+    oop 2
+    oop 3
+
+Week of 2-17
+    unit-testing
+    how-the-internet-works
+    spring
+
+Week of 2-24
+    spring boot 1
+    spring boot 2
+    error handling
+
+Week of 3-2
+    thymeleaf 1
+    thymeleaf 2
+    thymeleaf 3
+
+Week of 3-9
+    security 1
+    security 2
+
+Week of 3-16
+    api 1
+    api 2
+    ai fundamentals 1
+
+Week of 3-23
+    ai fundamentals 2
+    ai ethics
