@@ -206,18 +206,19 @@ directly on the `Person` class itself because it is a static method.
 
 ## Practice/Project Task
 
-- Activity Description:
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.):
-- Tools:
-- Time Estimate:
-- Test Case
-    - Input: 
-    - Output:
+- Activity Description: GitHub Project
+- Prompt: Fork the [OOP 2](https://github.com/LaunchCodeEducation/software-dev-course-oop-2) project from github into
+your own account, clone it to your local machine, and complete the exercises as describe in
+the README.md file.  When you are finished, commit and push your changes to your forked repository.
+- Format (individual, pair programming, presentation, group discussion, etc.): Individual
+- Tools:  Git, GitHub, JetBrains IntelliJ IDEA
+- Time Estimate: 1 hour
 - Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+    - **Green**: All exercises are completed and the unit tests all pass.
+    - **Yellow**: Some exercises are incomplete or some of the unit tests do not pass, but the code builds and is 
+    generally correct or on the right track.
+    - **Red**: The code is missing or unbuildable, and shows a lack of understanding of the concepts covered in this
+    lesson.
 
 ## Conclusion
 
