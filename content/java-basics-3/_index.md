@@ -132,11 +132,70 @@ if the first condition is true, the block of code inside the first if statement 
 chain will be skipped.  If the first condition is false, the program will check the second condition, and so on,
 until it finds a condition that is true or reaches the end of the chain.
 
+### Switch Statements
+
+In addition to the `if/else if/else` chain, Java provides another way to check multiple conditions using the `switch`
+statement.  The `switch` statement is useful when you have a single variable that you want to check against multiple
+values.  For example:
+
+```java
+...
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter a day of the week: ");
+String day = scanner.nextLine();
+
+switch (day) {
+    case "Monday":
+        System.out.println("It's Monday!");
+        break;
+    case "Tuesday":
+        System.out.println("It's Tuesday!");
+        break;
+    case "Wednesday":
+        System.out.println("It's Wednesday!");
+        break;
+    case "Thursday":
+        System.out.println("It's Thursday!");
+        break;
+    case "Friday":
+        System.out.println("It's Friday!");
+        break;
+    case "Saturday":
+        System.out.println("It's Saturday!");
+        break;
+    case "Sunday":
+        System.out.println("It's Sunday!");
+        break;
+    default:
+        System.out.println("Invalid day of the week.");
+}
+...
+```
+
+This program prompts the user to enter a day of the week and then checks the value of the `day` variable using a
+`switch` statement.  If the value of the `day` variable matches one of the cases, the program will execute the block
+of code associated with that case.  If the value of the `day` variable does not match any of the cases, the program
+will execute the block of code associated with the `default` case.
+
+Notice that each case in the `switch` statement is followed by a `break` statement.  This is because the `switch`
+statement will continue executing the code in each case until it reaches a `break` statement.  If you forget to add
+a `break` statement, the program will continue executing the code in the next case, even if the value of the variable
+does not match the case.
+
+Spend some time looking at the syntax of the `switch` statement and comparing it to the `if/else if/else` chain.  The
+`switch` statement is more concise and easier to read when you have a single variable that you want to check against
+multiple values.  However, the `switch` statement is more limited than the `if/else if/else` chain because it can
+only check for equality, while the `if/else if/else` chain can check for any boolean expression.
+
 ### Check For Understanding 1
 
-- Question/Exercise:
-- Expected Output/Answer:
-- Common Misconceptions to Address:
+- Question/Exercise: Which kind of conditional statement is best suited to check if a number is positive?
+- Expected Output/Answer: An `if` statement
+- Question/Exercise: Which kind of conditional statement is best suited to check if a number is positive, negative, or
+zero?
+- Expected Output/Answer: An `if/else if/else` chain
+- Question/Exercise: What kind of conditional statement is best suited to check between a list of menu options?
+- Expected Output/Answer: A `switch` statement
 
 ## Loops
 
