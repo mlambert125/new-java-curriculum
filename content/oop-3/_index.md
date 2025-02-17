@@ -589,7 +589,7 @@ idea of how we can use inheritance to create complex class hierarchies that mode
 ## Practice/Project Task
 
 - Activity Description: GitHub Project
-- Prompt: Fork the [OOP 2](https://github.com/LaunchCodeEducation/software-dev-course-oop-2) project from github into
+- Prompt: Fork the [OOP 3](https://github.com/LaunchCodeEducation/software-dev-course-oop-3) project from github into
 your own account, clone it to your local machine, and complete the exercises as describe in
 the README.md file.  When you are finished, commit and push your changes to your forked repository.
 - Format (individual, pair programming, presentation, group discussion, etc.): Individual
