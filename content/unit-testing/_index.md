@@ -282,15 +282,16 @@ there are no arguments), followed by an arrow `->`, and then the body of the lam
 We will use lambda expressions more in later topics, but for now, you can think of them as a way to pass a block of code
 to the `assertThrows` method that you expect to throw an exception.
 
+### Check For Understanding
 
-
-## Reflection Task
-
-- Prompt:
-- Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+1. **Question:** What is an "edge case" in the context of unit testing?
+    - **Answer:** An edge case is an unusual value that may cause unexpected behavior in your code.
+2. **Question:** What is the purpose of testing exceptional cases?
+    - **Answer:** The purpose of testing exceptional cases is to ensure that your code behaves correctly when it
+    encounters unexpected conditions.
+3. **Question:** What is a lambda expression?
+    - **Answer:** A lambda expression is a way to specify a block of code (function) that can be stored and passed
+    around as a value.
 
 ## Practice/Project Task
 
@@ -309,10 +310,19 @@ to the `assertThrows` method that you expect to throw an exception.
 
 ## Sharing Task
 
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.): 
-- Tools:
+- Prompt:  Discuss a good set of edge case parameter values for testing the following methods:
+    - `getFirstThreeLetters(String str)` - This method should return the first three letters of the input string.
+    - `isPrime(int n)` - This method should return `true` if the input number is prime and `false` otherwise.
+    - `getMax(int[] arr)` - This method should return the largest number in the input array.
+- Format (individual, pair programming, presentation, group discussion, etc.):  Group Discussion
+- Time Estimate: 10 minutes
 
 ## Conclusion
 
+In this lesson, we learned how to write unit tests using JUnit and how to run them in IntelliJ IDEA. We also discussed
+how to design good unit tests, including creating descriptive test methods, testing edge cases, and testing exceptional
+cases. Writing good unit tests is an important skill for any software developer, as it helps ensure that your code is
+correct and that it continues to work as expected as it is modified and extended.
+
+This knowledge will be useful throughout all of this course and in your future career as a software developer.
 
