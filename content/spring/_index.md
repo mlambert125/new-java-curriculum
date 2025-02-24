@@ -210,10 +210,14 @@ requests from the browser.
 
 ## Sharing Task
 
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.): 
-- Tools:
+- Prompt:  Prepare a how-to guide/presentation on using Spring Initializr for a team that is new to Spring Boot.  Your
+    guide should cover creating a basic Spring Boot web application as described in this section.
+- Format (individual, pair programming, presentation, group discussion, etc.): Presentation
+- Tools: Google Slides, PowerPoint, or other presentation software
 
 ## Conclusion
 
+In this section, we learned about what a framework is and what dependency injection is.  We also learned how to create a
+new Spring Boot application using Spring Initializr.  In the next sections, we will be learning about how to build web
+applications with Spring.
 
