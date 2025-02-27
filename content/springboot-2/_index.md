@@ -1,5 +1,5 @@
 +++
-title = "Springboot 2"
+title = "Springboot JPA"
 type = "chapter"
 weight = 160
 +++
@@ -8,10 +8,14 @@ weight = 160
 
 ### Competency:
 
+Spring Boot JPA
 
 ### Learning Objectives:
 
-- !!TODO!! 
+- I can add Spring Data JPA to a Spring Boot application.
+- I can create a Spring Data JPA repository.
+- I can use Spring Data JPA to perform CRUD operations on a database.
+- I can create controllers that use Spring Data JPA repositories to provide RESTful APIs.
 
 ## Introduction
 
