@@ -162,6 +162,9 @@ Here is how we will use the form to create new Spring Boot applications througho
 5. **Dependencies:** Select the dependencies you want to use in your project.  For starting out, you should click on
    "Add Dependencies" and select "Spring Web" from the list.  This will add the necessary dependencies for building a
    web application with Spring.
+6. **Generate:** Click on the "Generate" button to generate a zip file of your project.
+7. **Unzip:** Once the zip file is downloaded, unzip it to your projects directory.
+8. **Open in IntelliJ:** Open the `pom.xml` file in IntelliJ to open the project.
 
 > [!note]
 > As the course progresses, we will be adding more dependencies to our projects.  For now, we are just adding the
@@ -195,18 +198,19 @@ requests from the browser.
 
 ## Practice/Project Task
 
-- Activity Description:
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.):
-- Tools:
-- Time Estimate:
-- Test Case
-    - Input: 
-    - Output:
+- Activity Description: Creating a new Spring Boot application using Spring Initializr
+- Prompt: Create a new Spring Boot application using Spring Initializr.  Follow the instructions in this section to
+    create a new project.  Once you have created the project, run the application and verify that it is running
+    successfully.
+- Format (individual, pair programming, presentation, group discussion, etc.): Individual
+- Tools: Browser, IntelliJ
+- Time Estimate: 30 minutes
 - Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+    - **Green**: Student is able to create a new Spring Boot application using Spring Initializr and run the application
+      successfully.
+    - **Yellow**: Student created a new Spring Boot application using Spring Initializr, but was not able to run the
+      application successfully or failed to choose appropriate options to create a project.
+    - **Red**: Student was not able to create a new Spring Boot application using Spring Initializr.
 
 ## Sharing Task
 
