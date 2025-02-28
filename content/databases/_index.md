@@ -19,6 +19,10 @@ Introduction to Databases
 
 ## Introduction
 
+Databases are persistent storage systems that allow us to store and retrieve information.  Databases are essential to
+most web applications as they allow us to store data that will live beyond the life of a single request and even to live
+between restarts of the application or the computer/server that the application is running on.
+
 ## Creating a Database
 
 ### Check For Understanding
