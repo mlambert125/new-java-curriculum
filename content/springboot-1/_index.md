@@ -309,6 +309,78 @@ client-side javascript framework, such as React or Angular which can access it b
     field?
     - **Answer:**  POJO (Plain Old Java Object)
 
+### Controller RequestMapping
+
+We've seen that the `GetMapping` annotation lets us specify the url path that the method in question handles.  Let's
+look at a Controller class that has two handlers (for two different URLs.)  In this example, we'll use a new class annotation
+called `RequestMapping` to provide a base URL that prefixes all urls provided in the methods within the class:
+
+```java
+...
+@RestController
+@RequestMapping("/students")
+public class StudentController {
+    private List<Student> students = new ArrayList<> {{
+        add(new Student("John Doe", 95)),
+        add(new Student("Jane Doe", 95)),
+        add(new Student("Bob Smith", 95))
+    }};
+
+    @GetMapping("/json")
+    public List<Student> getStudent() {
+        return students;
+    }
+
+    @GetMapping("/html")
+    public String getStudent() {
+        String html = """
+        <html>
+            <body>
+                <ul>
+        """;
+
+        for (Student student : students) {
+            html += "<li>" + student.getName() + ": " + student.getGrade() + "</li>";
+        }
+
+        html += """
+                </ul>
+            </body>
+        </html>""";
+
+        return html;
+    }
+}
+```
+
+With this shared prefix, this controller class will respond to two urls:
+
+| Url                                 | Description                                           |
+| ----------------------------------- | ----------------------------------------------------- |
+| http://localhost:8080/students/json | Returns the list of students as a List in JSON format |
+| http://localhost:8080/students/html | Returns the list of students as an HTML list          |
+
+Each url is built from:
+
+`base spring url` + `class RequestMapping` + `method GetMapping` 
+
+E.g.
+`http://localhost:8080` + `/students` + `/json`
+
+### Other HTTP methods
+
+The `GetMapping` lets us handle HTTP GET requests.  We can also handle other HTTP verbs using their corresponding
+annotations:
+
+- `PostMapping` - Handles an HTTP Post from a form or javascript `fetch` reqeust
+- `PutMapping` - Handles an HTTP Put from a javascript `fetch` request
+- `DeleteMapping`- Handles an HTTP Delete from a javascript `fetch` request
+- `PatchMapping` - Handles an HTTP Patch from a javascript `fetch` request
+ 
+We will be working with these other types more in the next section, but for now, know that they exist and work
+in a similar manner to `GetMapping`.
+
+
 ## MVC Architecture
 
 In the previous sections, we learned about controllers and models in Spring Boot.  Let's consider one more type of
@@ -340,34 +412,21 @@ into three distinct components, which makes our application easier to maintain a
 4. **Question:**  What is the purpose of the controller in MVC?
     - **Answer:**  The controller responds to requests, loads data from the model, and returns a view to the client.
 
-## Reflection Task
-
-- Prompt:
-- Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
-
 ## Practice/Project Task
 
-- Activity Description:
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.):
-- Tools:
-- Time Estimate:
-- Test Case
-    - Input: 
-    - Output:
+- Activity Description: GitHub Project
+- Prompt: Fork the [Java Basics 4](https://github.com/LaunchCodeEducation/software-dev-course-spring-boot-1) project from github into your own account, clone it to your local machine, and
+complete the exercises as describe in the README.md file.  When you are finished, commit and push your changes to your
+forked repository.
+- Format (individual, pair programming, presentation, group discussion, etc.): Individual
+- Tools:  Git, GitHub, JetBrains IntelliJ IDEA
+- Time Estimate: 1 hour
 - Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
-
-## Sharing Task
-
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.): 
-- Tools:
+    - **Green**: All exercises are completed and the unit tests all pass.
+    - **Yellow**: Some exercises are incomplete or some of the unit tests do not pass, but the code builds and is 
+    generally correct or on the right track.
+    - **Red**: The code is missing or unbuildable, and shows a lack of understanding of the concepts covered in this
+    lesson.
 
 ## Conclusion
 
