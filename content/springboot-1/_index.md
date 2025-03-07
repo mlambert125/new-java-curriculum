@@ -206,10 +206,10 @@ text.  This is the HTML that our controller is returning in the response body.  
 server delivering HTML content to the browser.
 
 > [!NOTE] Templating HTML
-> In future lessons, we will learn how to use templates to generate HTML content dynamically.  This will allow us to
-> more easily create web pages in separate files and include dynamic content in the pages.  Returning HTML directly from
-> a controller is not a common practice in real web applications, but it is a good starting point to understand how
-> controllers work in Spring Boot.
+
+> In practice, one would not typically return HTML directly from a controller.  Instead, we would use a template engine
+> to generate the HTML dynamically.  This course is focused on using Spring Boot to build web apis, so we will not be
+> covering template engines or server-side rendering of HTML in this course.
 
 ### Check For Understanding
 
@@ -322,7 +322,8 @@ Put together, these three components make up the MVC architecture.  MVC stands f
 - **Model:**  The model is the data that we want to return from our controller.  This data is communicated through a
     model class, but is often loaded and populated from a database.
 - **View:**  The view is what we return to the client in the response body.  It can be a simple string, HTML, or JSON,
-    or an HTML page created using a template engine.
+    or an HTML page created using a template engine.  For our purposes, the view is the JSON that we return from our
+    controller.
 - **Controller:**  The controller is a class that handles HTTP requests and responses.  It is responsible for processing
   the request, performing any necessary business logic, and returning a response to the client.
 
@@ -370,5 +371,13 @@ into three distinct components, which makes our application easier to maintain a
 - Tools:
 
 ## Conclusion
+
+In this lesson, we learned a *lot*!   We learned how to create a Spring Boot Web Application that responds to HTTP
+requests with data serialized from Model classes.  We also learned about the MVC architecture and how it is used in
+Spring Boot.  We learned about java annotations and how they are used to define the behavior of the classes that make
+up a Spring Boot application.
+
+In the next section we will learn to connect our Spring Boot application to a database and how to use Spring Data JPA to
+permanently store and retrieve model data from a database.
 
 
