@@ -24,9 +24,20 @@ part of the Spring Data project, which aims to simplify working with databases i
 allows us to store and retrieve java objects from a database without writing any SQL queries.  It provides a generic
 data access framework that works with any database that has a JDBC driver.
 
-In this lesson, we will learn how to add Spring Data JPA to a Spring Boot application, create a repository interface
-for an entity, and use the repository to perform CRUD operations on the entity.  We will also learn how to use the
-repository in a controller to provide RESTful APIs for interacting with the entity.
+You may be wondering how a database fits into the way that we have been using the Spring Boot framework so far.  You'll
+recall that in the previous lesson, we learned about the MVC pattern.  In short, Spring Boot JPA lets us store
+our model instances in a database, so that they can persist beyond the life of a single request and even to live between
+restarts of the application or the computer/server that the application is running on.
+
+In order to accomplish this, we are going to expand our Spring Boot application by:
+
+1. Adding Spring Data JPA to our project.
+2. Annotating our model classes for storage in the database, and adding an id field to each class to act as the
+    primary key.
+3. Adding a new kind of class to our project called a repository that will be in charge of storing and retrieving
+    our model instances to and from the database.
+4. Using the repository in our controller to provide RESTful APIs for interacting with the data.
+
 
 There is a lot to cover in this lesson, so let's get started!
 
@@ -153,19 +164,19 @@ annotation.
 
 ## Repository Interfaces
 
-Once you have annotated your model classes, you need to create a repository interface for each entity that you want to
-store in the database.  A repository interface is an interface that extends the `JpaRepository` interface provided by
-Spring Data JPA.  The `JpaRepository` interface provides methods for performing CRUD operations on the entity.
+Once you have annotated your model classes, you need to create a repository interface for each model classthat you want
+to store in the database.  A repository interface is an interface that extends the `JpaRepository` interface provided by
+Spring Data JPA.  The `JpaRepository` interface provides methods for performing CRUD operations on the model class.
 
 It may seem unusual to create an interface without providing an implementation, but Spring Data JPA will automatically
 generate an implementation for the repository interface at runtime.  This is one of the powerful features of Spring Data
 JPA - it allows you to create repositories without writing any implementation code!
 
-We will create a new folder/package called `repositories` in the `src/main/java` directory of our project.  In this
-folder, we will create a new interface for each entity that we want to store in the database.  The interface should
-extend the `JpaRepository` interface and specify the entity type and the type of the primary key as type parameters.
+First, create a new folder/package called `repositories` in the `src/main/java` directory of your project.  In this
+folder, we will create a new interface for each model type that we want to store in the database.  The interface should
+extend the `JpaRepository` interface and specify the model type and the type of the primary key as type parameters.
 
-Here is an example of a repository interface for the `User` entity:
+Let's look at an example of a repository for the `User` class:
 
 ```java
 public interface UserRepository extends JpaRepository<User, Integer> {
@@ -177,10 +188,12 @@ appropriate implementation for this interface at runtime.
 
 ### Check For Understanding
 
-1. **Question:** 
+1. **Question:**  What is a repository interface?
     - **Answer:** 
-2. **Question:** 
+        - An interface that extends the `JpaRepository` interface provided by Spring Data JPA.
+2. **Question:** What is the purpose of a repository interface?
     - **Answer:** 
+        - To provide methods for performing CRUD operations on the model class.
 
 ## Using the Repository in a Controller
 
@@ -236,7 +249,7 @@ the `UserController` class, it will automatically inject the repository directly
 
 Either way, once you have injected the repository into the controller, you can use it in the controller methods to
 add, update, delete, and retrieve entities from the database.  The repository provides methods for performing CRUD
-operations on the entity, such as `save`, `findById`, `findAll`, `delete`, etc.
+operations on the model, such as `save`, `findById`, `findAll`, `delete`, etc.
 
 Here is an example of a controller method that uses the repository to retrieve all users from the database:
 
@@ -254,7 +267,7 @@ to the client in JSON format.
 If you type this into your controller class, you'll see the available methods that you can use with the repository
 when you type `userRepository.`.  There are methods for saving, updating, deleting, and retrieving entities from the
 database.  These methods automatically take care of generating the appropriate SQL queries to interact with the
-database and mapping the results to the entity objects for you.  This is the power of Spring Data JPA.  You can
+database and mapping the results to the model objects for you.  This is the power of Spring Data JPA.  You can
 focus on treating your data as Java objects and let Spring Data JPA take care of the rest.
 
 ### Check For Understanding
@@ -266,16 +279,16 @@ focus on treating your data as Java objects and let Spring Data JPA take care of
 
 ## A Completed CRUD Controller
 
-We have created a model class, annotated it for storage in the database, created a repository interface for the entity,
+We have created a model class, annotated it for storage in the database, created a repository interface for the model,
 and used the repository in a controller to provide access to read the data from the database.  We can now add methods to
-the controller to perform the other CRUD operations on the entity.
+the controller to perform the other CRUD operations on the model type.
 
 CRUD stands for Create, Read, Update, and Delete.  These are the basic operations that you can perform on a database.
 
-- Create: Add a new entity to the database.
-- Read: Retrieve an entity from the database.
-- Update: Update an entity in the database.
-- Delete: Remove an entity from the database.
+- Create: Add a new instance of the model class to the database.
+- Read: Retrieve an instance of the model class from the database.
+- Update: Update a stored instance of the model class in the database.
+- Delete: Remove a stored instance of the model class from the database.
 
 To this point, we've used the `@GetMapping` annotation to retrieve all users from the database.  Conventionally, we use
 other mapping attributes that correspond to other HTTP methods to perform the other CRUD operations:
@@ -312,7 +325,7 @@ annotations, Spring Boot can map these parts of the request to method parameters
 automatically read and convert the data from the request into the appropriate Java objects and pass them to our
 controller methods.
 
-Let's look at how we use each of these annotations in the context of a CRUD controller for the `User` entity.
+Let's look at how we use each of these annotations in the context of a CRUD controller for the `User` type.
 
 ### Read Operations
 
@@ -365,7 +378,7 @@ For the update operation, we use the `@PutMapping` annotation and the `save` met
 like the create operation, we'll expect the client to send the data in the request body in JSON format.
 
 We also conveniently have the id of the user we want to update in the URL.  This may seem redundant, but it is a
-convention in RESTful APIs to include the id of the entity you want to update in the URL of a PUT request even though
+convention in RESTful APIs to include the id of the object that you want to update in the URL of a PUT request even though
 it is also included in a field in the request body.  The reason for this is that with REST, the URL should always
 identify the data that we are operating on.  This means that any operation that pertains to one record instead of the
 entire set should always include the id of the item in the url.
@@ -403,7 +416,7 @@ public void deleteUser(@PathVariable int id) {
 
 ### Putting it all together
 
-Here is a completed CRUD controller for the `User` entity:
+Here is a completed CRUD controller for the `User` model class:
 
 ```java
 import org.springframework.web.bind.annotation.*;
@@ -449,13 +462,13 @@ public class UserController {
 The five methods in this controller are the typical methods that you would include in a CRUD controller:
 
 - `getAll` to retrieve all of the entities from the database.
-- `get` to retrieve a specific entity from the database.
-- `create` to add a new entity to the database.
-- `update` to update an entity in the database.
-- `delete` to remove an entity from the database.
+- `get` to retrieve a specific object from the database.
+- `create` to add a new object to the database.
+- `update` to update an object in the database.
+- `delete` to remove an object from the database.
 
 While these are the typical methods that you would include in a CRUD controller, you can also add additional methods to
-perform other operations on the entity as needed, for example, to search for entities that match certain criteria or to
+perform other operations on the object as needed, for example, to search for entities that match certain criteria or to
 perform other operations that are specific to your application.  You may also choose to remove some of these methods if
 they are not needed in your application.  For example, some applications may not allow users to delete entities.
 
@@ -467,7 +480,7 @@ they are not needed in your application.  For example, some applications may not
     - **Answer:** @RequestBody
 3. **Question:** What annotation do you use to map a request parameter in the URL to a method parameter?
     - **Answer:** @RequestParam
-4. **Question:** Why do we include the id of the entity we want to update in the URL of a PUT request?
+4. **Question:** Why do we include the id of the object we want to update in the URL of a PUT request?
     - **Answer:** Because the URL should always identify the data that we are operating on even if it is also included
         in the request body.
 5. **Question:** What extra step needs to be taken in the update method other than saving the user object?
@@ -492,7 +505,12 @@ they are not needed in your application.  For example, some applications may not
 
 ## Conclusion
 
-In this lesson, we learned how to add Spring Data JPA to a Spring Boot application, create a repository interface for
-an entity, and use the repository to perform CRUD operations on the entity.  We also learned how to use the repository
-in a controller to provide RESTful APIs for interacting with the entity.
+In this lesson, we learned how to add Spring Data JPA to a Spring Boot application, and to integrate it with our
+existing Spring Boot Web application.  We learned how to annotate our model classes for storage in the database, and
+how to create a repository interface for each model class.  We also learned how to use the repository in a controller
+to provide RESTful APIs for performing CRUD operations on each of our model classes.
+
+Managing and persisting data is the primary purpose of our entire java web application.  Now that we have a solid
+understanding of how to use Spring Data JPA to store and retrieve data from a database, we have a complete picture of
+how to build a complete backend for our full stack web application.
 
