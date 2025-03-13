@@ -498,18 +498,19 @@ they are not needed in your application.  For example, some applications may not
 
 ## Practice/Project Task
 
-- Activity Description:
-- Prompt:
-- Format (individual, pair programming, presentation, group discussion, etc.):
-- Tools:
-- Time Estimate:
-- Test Case
-    - Input: 
-    - Output:
+- Activity Description: GitHub Project
+- Prompt: Fork the [Spring Boot 2](https://github.com/LaunchCodeEducation/software-dev-course-spring-boot-2) project
+    from github into your own account, clone it to your local machine, and complete the exercises as describe in the
+    `README.md` file.  When you are finished, commit and push your changes to your
+forked repository.
+- Format (individual, pair programming, presentation, group discussion, etc.): Individual
+- Tools:  Git, GitHub, JetBrains IntelliJ IDEA
+- Time Estimate: 90 minutes
 - Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+    - **Green**: All exercises are completed
+    - **Yellow**: Some exercises are incomplete
+    - **Red**: The code is missing or unbuildable, and shows a lack of understanding of the concepts covered in this
+    lesson.
 
 ## Conclusion
 
