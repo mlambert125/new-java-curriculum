@@ -416,16 +416,15 @@ into three distinct components, which makes our application easier to maintain a
 ## Practice/Project Task
 
 - Activity Description: GitHub Project
-- Prompt: Fork the [Java Basics 4](https://github.com/LaunchCodeEducation/software-dev-course-spring-boot-1) project from github into your own account, clone it to your local machine, and
+- Prompt: Fork the [Spring Boot 1](https://github.com/LaunchCodeEducation/software-dev-course-spring-boot-1) project from github into your own account, clone it to your local machine, and
 complete the exercises as describe in the README.md file.  When you are finished, commit and push your changes to your
 forked repository.
 - Format (individual, pair programming, presentation, group discussion, etc.): Individual
 - Tools:  Git, GitHub, JetBrains IntelliJ IDEA
-- Time Estimate: 1 hour
+- Time Estimate: 90 minutes
 - Expected Outcomes: 
-    - **Green**: All exercises are completed and the unit tests all pass.
-    - **Yellow**: Some exercises are incomplete or some of the unit tests do not pass, but the code builds and is 
-    generally correct or on the right track.
+    - **Green**: All exercises are completed
+    - **Yellow**: Some exercises are incomplete
     - **Red**: The code is missing or unbuildable, and shows a lack of understanding of the concepts covered in this
     lesson.
 
