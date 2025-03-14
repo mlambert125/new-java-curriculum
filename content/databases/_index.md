@@ -52,7 +52,7 @@ There are two main approaches to working with databases in web applications:
     information about how they should be stored in the database.  This approach relies on the framework to generate the
     appropriate SQL to create and manage the database.
 
-In this course, we will be focusing on the Code First approach.  This approach is more common in modern web applications
+For now, we will be focusing on the Code First approach.  This approach is more common in modern web applications
 and is the approach used by most frameworks.  This approach also has the benefit of building on the knowledge you have
 gained in previous courses about object-oriented programming and Java without requiring you to learn a new language.
 
@@ -60,6 +60,12 @@ With a code first approach, we will still be using MySQL Workbench to create our
 occasionally to inspect the database to ensure data is being stored correctly, so it is still important to understand
 the basics of how to use MySQL Workbench, and we will be reviewing that in this lesson and in coming lessons as it
 comes up.
+
+> [!NOTE]
+> Later we will learn about SQL and how to use it to interact with databases.  SQL is a powerful
+> language that allows us to perform complex queries and operations on the database.  Learning SQL will be essential
+> if you want to work with databases in a professional setting or if you want to build more complex web applications.
+
 
 ### Check For Understanding
 
