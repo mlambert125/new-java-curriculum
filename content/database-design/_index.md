@@ -13,11 +13,30 @@ Database Design
 ### Learning Objectives:
 
 - I can explain SQL data types
+- I can write SQL create table and drop table statements
 - I can create a full SQL database creation script
 
 ## Introduction
 
-## Section 1
+## SQL Data Types
+
+### Check For Understanding
+
+1. **Question:** 
+    - **Answer:** 
+2. **Question:** 
+    - **Answer:** 
+
+## CREATE TABLE
+
+### Check For Understanding
+
+1. **Question:** 
+    - **Answer:** 
+2. **Question:** 
+    - **Answer:** 
+
+## Writing a Create Script
 
 ### Check For Understanding
 
