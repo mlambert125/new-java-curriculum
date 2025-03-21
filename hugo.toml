@@ -8,3 +8,8 @@ themeVariant = 'relearn-light'
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[outputs]
+  home = ['html', 'rss', 'print']
+  page = ['html', 'rss', 'print']
+  section = ['html', 'rss', 'print']

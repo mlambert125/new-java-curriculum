@@ -198,6 +198,7 @@ follows:
 delete from users where username = 'jdoe';
 ```
 Let's break this down:
+
 | Statement Part | Description |
 |----------------|-------------|
 | `delete from`  | This tells MySQL that we want to delete data from a table. |
@@ -231,6 +232,7 @@ select firstName, lastName from users where lastName = 'Doe';
 ```
 
 The structure of the SELECT statement is as follows:
+
 | Statement Part | Description |
 |----------------|-------------|
 | `select`       | This tells MySQL that we want to retrieve data from a table. |
