@@ -385,6 +385,72 @@ Here are some of the common functions that we can use in the SELECT statement:
 6. **Question:** What does the `upper` function do in SQL?
     - **Answer:** The `upper` function converts a string to uppercase.
 
+## Order By and Limit
+
+### Sorting with `order by`
+
+We can also sort the results of a SELECT statement using the `order by` clause. The `order by` clause allows us to sort
+the results of a query by one or more columns. For example, if we wanted to retrieve all users and sort them by age in
+descending order, we could do the following:
+
+```sql
+select * from users order by age desc;
+```
+
+This would retrieve all users and sort them by age in descending order. We can also sort by multiple columns. For
+example, if we wanted to retrieve all users and sort them by last name in ascending order and then by first name in
+ascending order, we could do the following:
+
+```sql
+select * from users order by lastName asc, firstName asc;
+```
+
+This would retrieve all users and sort them by last name in ascending order and then if any users have the same last
+name, sort them within their group by first name in ascending order.
+
+### Limiting the Number of Rows Returned with `limit`
+
+We can also limit the number of rows returned by a query using the `limit` clause. The `limit` clause allows us to
+specify how many rows we want to retrieve. For example, if we wanted to retrieve the first 5 users in the table, we
+could do the following:
+
+```sql
+select * from users limit 5;
+```
+
+This would retrieve the first 5 users in the table. We can also specify an offset to start from. For example, if we
+wanted to retrieve the next 5 users in the table starting from the 6th user, we could do the following:
+
+```sql
+select * from users limit 5 offset 5;
+```
+
+This would retrieve the next 5 users in the table starting from the 6th user.
+
+### Paging with `limit`, `offset` and `order by`
+
+We can combine `limit`, `offset`, and `order by` to create paging functionality. Imagine a web page with a table of
+users that shows 10 users per page and lets the user sort by any column.  Let's say the user is on page 3 and wants to
+see the next 10 users sorted by last name. We could do the following:
+
+```sql
+select * from users order by lastName asc limit 10 offset 20;
+```
+
+This would retrieve the next 10 users in the table starting from the 21st user and sorted by last name in ascending
+order.
+
+### Check For Understanding
+
+1. **Question:** What does the `order by` clause do in a SELECT statement?
+    - **Answer:** It sorts the results of the query by one or more columns.
+2. **Question:** What does the `limit` clause do in a SELECT statement?
+3. **Question:** What does the `offset` clause do in a SELECT statement?
+    - **Answer:** It specifies where to start retrieving rows from when using the `limit` clause.
+4. **Question:** How do we combine `limit`, `offset`, and `order by` to create paging functionality?
+    - **Answer:** By using the `limit` and `offset` clauses to specify how many rows to retrieve and where to start
+      retrieving from, and the `order by` clause to specify how to sort the results.
+
 ## Practice/Project Task
 
 - Activity Description:
