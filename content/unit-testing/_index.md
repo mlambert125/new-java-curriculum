@@ -60,7 +60,7 @@ Typically, to create a unit test, we begin by creating a new folder called `test
 next to the `main` folder. If you right-click on the `src` folder in IntelliJ IDEA, you can select `New -> Directory`
 and one of the suggested choices will be to create this `test` directory.
 
-[!Make Test Directory](../images/make-test-directory.png)
+![Make Test Directory](make-test-directory.png)
 
 > [!NOTE]
 > Depending on how your project was created, you may already have a `test` directory in your project. If you do, you
@@ -70,7 +70,7 @@ Next, we will create a new package in the `test/java` directory. This package sh
 for your project (by default `org.example`). You can create a new package by right-clicking on the `test/java` directory
 and selecting `New -> Package` and entering the package name.
 
-[!Make Test Package](../images/make-test-package.png)
+![Make Test Package](make-test-package.png)
 
 Finally, we right-click on the package we just created and select `New -> Java Class` to create a new test class. The
 name of the test class should be the same as the name of the class we are testing with the word `Test` appended to the end.

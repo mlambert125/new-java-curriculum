@@ -140,7 +140,7 @@ Spring Boot application.
 You can access Spring Initializr at [start.spring.io](https://start.spring.io/).  When you go to the website, you will
 see a form that allows you to specify the details of your new application.
 
-![Spring Initializr](initalizr.png)
+![Spring Initializr](initializr.png)
 
 Here is how we will use the form to create new Spring Boot applications throughout the course:
 
