@@ -245,31 +245,231 @@ We should get the same results as before, but this time the user is being loaded
 2. **Question:** 
     - **Answer:** 
 
+## Using the Token
+
+Once we have successfully logged in and received a token, we should include this token with each request to the server
+moving forward.  By passing this token with each request, Spring Boot will be able to validate the token and allow us
+to consider the user and their roles when processing the request.
+
+You may be wondering *where* to include the token.  We don't include it in the URL or the body of the request for a few
+reasons:
+
+- Including it in the URL would expose it in the browser history and server logs.
+- Including it in the body would expose it in the request body and server logs.
+- It logically doesn't "fit" here, because it is not "part" of the request.  It's an extra bit of information.
+
+Thankfully, there is a place in the HTTP request specifically for the purpose of including extra information like this:
+the headers.  The token should be included in the `Authorization` header of the request.  Because there are many ways to
+use the `Authorization` header, we need to prefix the value of the header with the word `Bearer` to indicate that the
+value is a token.
+
+| Key | Value |
+| --- | --- |
+| Authorization | Bearer 0a3f4b5c-6d7e-8f9a-b0c1-d2e3f4a5b6c7 |
+
+This process of getting a token and then including it in the `Authorization` header of each request is called
+"stateless authentication" because the server does not need to keep track of the user's state.  The token contains all
+the information the server needs to authenticate the user and determine their roles.  The token is secure because it
+is signed by the server and cannot be forged or tampered with.  Only the server has the secret key needed to decode the
+token, change the information, and re-encode it.
+
+### Using Tokens in Postman
+
+In Postman, you first run the `GET /login` request to get a token.  Then you copy the token from the response and paste
+it into the `Authorization` header after the word `Bearer` and a space for any subsequent Postman requests.
+
+### Check For Understanding
+
+1. **Question:**  How do you include the token in a request to a REST endpoint?
+    - **Answer:** You include the token in the `Authorization` header with the value `Bearer` followed by a space and
+      then the token.
+2. **Question:**  Why do we include the token in the `Authorization` header?
+    - **Answer:**  So that the server can validate the token and authenticate the user and use the user's information
+      and roles to authorize and process the request.
+
 ## Securing REST endpoints
 
+Once we have implemented authentication, we can move on to authorization.  Authorization is the process of determining
+if a user has permission to access a resource.  In this case, we are talking about securing REST endpoints.
+
+Authorization is done with simple attributes in Spring Boot.
+
+There are three main ways to secure REST endpoints in Spring Boot:
+
+- Restrict access to only allow authenticated users.
+- Restrict access to only allow users with specific roles.
+- Restrict access to only allow specific users by username.
+
+We can use the `@PreAuthorize` annotation to accomplish all three of these cases.  In every case, the annotation takes a
+string that is a SpEL (Spring Expression Language) expression that evaluates to a boolean.  SpEL is a tiny language
+that allows us to write expressions that evaluate to a boolean.  We can use this language to write expressions that
+check if the user is authenticated, has a specific role, or is a specific user.
+
+### Restrict Access to Authenticated Users
+
+To restrict access to only authenticated users, we can use the `@PreAuthorize` annotation with the expression
+`isAuthenticated()`:
+
+```java
+@PreAuthorize("isAuthenticated()")
+```
+
+We can add this annotation to a controller to secure all the endpoints in that controller.  For example:
+
+```java
+@RestController
+@RequestMapping("/books")
+@PreAuthorize("isAuthenticated()")
+public class BookController {
+    @GetMapping
+    public List<Book> getBooks() {
+        return bookService.getBooks();
+    }
+}
+```
+
+We can also add this annotation to individual methods to secure only those methods.  For example:
+
+```java
+@RestController
+@RequestMapping("/books")
+public class BookController {
+    @GetMapping
+    @PreAuthorize("isAuthenticated()")
+    public List<Book> getBooks() {
+        return bookService.getBooks();
+    }
+}
+```
+
+With this attribute attached, only authenticated users (but *any* authenticated user) will be able to access the
+endpoints in this controller.
+
+### Restrict Access to Users with Specific Roles
+
+To restrict access to only users with specific roles, we can use the `@PreAuthorize` annotation with the expression
+`hasAuthority`:
+
+```java
+@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+```
+
+As with `isAuthenticated`, we can add this annotation to a controller or to individual methoods.
+
+This will restrict access to only users with the `ROLE_ADMIN` authority.  If the user does not have this authority, they
+will get a 403 Forbidden response.
+
+> [!NOTE]
+> Older versions of Spring Boot used `hasRole` instead of `hasAuthority`.  If you are using an older version of Spring
+> Boot, you may see this annotation instead.  They are equivalent.
+
+### Restrict Access to Specific Users
+
+To restrict access to only specific users, we can use the `@PreAuthorize` annotation with the expression
+`principal.username == 'admin'`:
+
+```java
+@PreAuthorize("principal.username == 'admin'")
+```
+
+This will restrict access to only the user with the username `admin`.  If the user is not `admin`, they will get a 403
+Forbidden response.
+
+### 403 Forbidden vs 401 Unauthorized
+
+When you request an endpoint that is secured with `@PreAuthorize`, and you are not authorized to access that endpoint,
+you can get one of two responses:
+
+- 401 Unauthorized - This means that you are not authenticated.  You need to log in and get a token before you can
+  access this endpoint.
+- 403 Forbidden - This means that you are authenticated, but you are not authorized to access this endpoint.  You need
+  to have the correct role or be the correct user to access this endpoint.
+
+It is important to understand the difference between these two responses so that you can troubleshoot and fix any
+authorization issues that arise.
+
+If you are getting a 403 Forbidden response, your token is valid and working properly, but you do not have the correct
+role or are not the correct user to access the endpoint.  You should check the database to make sure the user has the
+correct roles and that the roles are being loaded correctly.
+
+If you are getting a 401 Unauthorized response, your token is not valid or is missing.  You should check the
+authentication implementation and ensure that you are using a non-expired valid token and that you properly added the
+token (prefixed with `Bearer` and a space) to the `Authorization` header of the request.
+
 ### Check For Understanding
 
-1. **Question:** 
-    - **Answer:** 
-2. **Question:** 
-    - **Answer:** 
+1. **Question:** What attribute do you use to restrict access to only authenticated users?
+    - **Answer:** `@PreAuthorize("isAuthenticated()")`
+2. **Question:**  What attribute do you use to restrict access to only users with the role `ROLE_ADMIN`?
+    - **Answer:**  `@PreAuthorize("hasAuthority('ROLE_ADMIN')")`
+3. **Question:**  What attribute do you use to restrict access to only the user with the username `admin`?
+    - **Answer:**  `@PreAuthorize("principal.username == 'admin'")`
+4. **Question:**  What is the difference between a 401 Unauthorized response and a 403 Forbidden response?
+    - **Answer:**  A 401 Unauthorized response means that you are not authenticated.  A 403 Forbidden response means
+      that you are authenticated, but you are not authorized to access the endpoint.
 
-## Retrieving the Current User REST endpoints
+## Retrieving the Current User in REST endpoints
+
+As we've seen, the token is useful for authorizing requests and securing endpoints.  But there are other times that we
+may need to know who the current user is.  For example, consider a REST endpoint that lists all of the books that have
+been purchased by the current user.  We need to know who the current user is to retrieve this information.  We wouldn't
+want to simply pass the username as a parameter to the endpoint because this could be easily forged so that one user
+could see another user's purchases.  Instead, we want to get the current username from the token.
+
+In a Spring Boot controller method, we can do this by adding a parameter of type `Principal` to the method signature.
+Spring Boot will automatically inject the current user's `Principal` object into this parameter.  Unlike other
+parameters, we do not need to annotate this parameter with `@RequestParam` or `@PathVariable`.  Spring Boot knows how
+to map this parameter to the current user info by the type of the parameter.
+
+The main thing that we want from the principal object is the username.  We can get this by calling the `getName` method
+on the principal object.  This will return the username of the current user.  Putting it all together, we can write a
+controller method like this:
+
+```java
+@RestController
+@RequestMapping("/books")
+public class BookController {
+    @GetMapping
+    @PreAuthorize("isAuthenticated()")
+    public List<Book> getBooks(Principal principal) {
+        String username = principal.getName();
+        return bookService.getBooksForUser(username);
+    }
+}
+```
+
+When this method is called due to a request to the `/books` endpoint, Spring Boot will inject the current user's
+`Principal` object into the `principal` parameter.  We can then call the `getName` method on the `Principal` object to
+get the username of the current user.  We can then use this username to retrieve the books for the current user.
+
+We can use this technique to get the current user in any controller method.  We can even mix this parameter with other
+parameters that come from the request body, request parameters, or path variables:
+
+```java
+@RestController
+@RequestMapping("/books")
+public class BookController {
+    @GetMapping("/{id}")
+    @PreAuthorize("isAuthenticated()")
+    public Book getBook(Principal principal, @PathVariable Long id) {
+        String username = principal.getName();
+        return bookService.getBookForUser(username, id);
+    }
+}
+```
+
+In this example, we are getting the current user's username from the `Principal` object and the book id from the path
+variable.  We can then use this information to retrieve the book for the current user.
 
 ### Check For Understanding
 
-1. **Question:** 
-    - **Answer:** 
-2. **Question:** 
-    - **Answer:** 
-
-## Reflection Task
-
-- Prompt:
-- Expected Outcomes: 
-    - **Green**:
-    - **Yellow**:
-    - **Red**:
+1. **Question:** How do you get the current user's username in a Spring Boot controller method?
+    - **Answer:** Add a parameter of type `Principal` to the method signature and call the `getName` method on the
+      `Principal` object.
+2. **Question:** Why is it important to get the current user's username from the `Principal` object and not from the
+    request body, request parameters, or path variables?
+    - **Answer:** Because the username in the `Principal` object comes form the secure token and cannot be forged.  The
+      username in the request body, request parameters, or path variables could be easily forged.
 
 ## Practice/Project Task
 
@@ -288,4 +488,8 @@ We should get the same results as before, but this time the user is being loaded
 
 ## Conclusion
 
+In this lesson, we learned all about password hashing and how to implement user authentication and authorization in
+Spring Boot.  Authentication and authorization let us create applications that are secure and personalized to the user
+of our application.  Now, instead of writing applications that provide the same data and experience to every user, we
+can write applications that provide a unique experience to each user based on their identity and roles.
 
