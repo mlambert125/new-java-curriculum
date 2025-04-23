@@ -188,15 +188,22 @@ the input you provided. This is a simple demonstration of how to use the Gemini 
       API. In this case, we added the `google-genai` dependency to our Maven `pom.xml` file.
 2. **Question:**  Why do we create an environment variable file (`app.env`) instead of hard-coding the API key directly
    into the code?
-    - **Answer:**  Creating an environment variable file helps keep sensitive information like API keys secure and private. 
-      Hard-coding the API key directly into the code can lead to accidental exposure if the code is shared or published 
+    - **Answer:**  Creating an environment variable file helps keep sensitive information like API keys secure and private.
+      Hard-coding the API key directly into the code can lead to accidental exposure if the code is shared or published
       publicly (e.g., on GitHub).
 
 ## Practice/Project Task
 
 - Activity Description: Movie Management Spring Boot Application
 - Prompt:
-    - Create a Spring Boot application that allows users to manage a list of movies.
+    - Create a simple Spring Boot application that allows users to manage a list of movies.
+    - Your application only needs one entity: `Movie`, which should have the following attributes:
+        - Title (String)
+        - Rating (int)
+        - Description (String)
+    - Your application only needs a single controller: `MovieController`, which should have the following endpoints:
+        - `GET /movies`: Get a list of all movies.
+        - `POST /movies`: Add a new movie.
     - Users should be able to add a movie with a title and rating.
     - The description of the movie should be generated using the Google Gemini API based on the title provided by the user.
     - Display the list of movies with their title, rating, and generated description.
