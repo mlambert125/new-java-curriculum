@@ -97,6 +97,85 @@ her changes to the main repository to have Bob review and merge them:
     git push origin user-management-feature
     ```
 
+6. **Open a Pull Request**: Alice opens a pull request on GitHub to merge her feature branch into
+    the main branch. She can do this by navigating to the repository on GitHub, clicking
+    the "Pull requests" tab, and then clicking the "New pull request" button. She selects her
+    feature branch as the source and the main branch as the target, adds a description of her
+    changes, and submits the pull request.
 
+7. **Code Review**: Bob reviews Alice's pull request, providing feedback and requesting changes if
+    necessary. Alice can respond to comments and make additional commits to her feature branch
+    as needed.
 
+8. **Merge the Pull Request**: Once Bob is satisfied with the changes, he merges Alice's pull
+    request into the main branch using the "Merge pull request" button on GitHub.
 
+9. **Delete the Feature Branch**: After the pull request is merged, Alice can delete her feature
+    branch both locally and on GitHub to keep the repository clean. She can do this using
+    the tools in her editor/IDE or the command line:
+    ```bash
+    git branch -d user-management-feature
+    git push origin --delete user-management-feature
+    ```
+10. **Update Local Main Branch**: Bob and Alice should update their local main branches to
+    reflect the latest changes from the remote repository. They can do this using the tools in
+    their editor/IDE or the command line:
+    ```bash
+    git checkout main
+    git pull origin main
+    ```
+
+By following these steps, Alice and Bob can effectively collaborate on the project using the
+feature branch workflow. This workflow helps to keep the main branch stable and allows for
+easy code reviews and integration of new features.
+
+You already know how to do most of these steps from previous chapters, but let's take a closer look
+at the steps involved in creating and reviewing a pull request on GitHub.
+
+## Creating a Pull Request
+
+A pull request (PR) is a way to propose changes to a codebase and request that those changes be
+reviewed and merged into the main branch. Pull requests are a key feature of GitHub and
+facilitate collaboration and code review.
+
+To create a pull request on GitHub, follow these steps:
+
+1. Navigate to the repository on GitHub where you want to create the pull request.
+2. Click on the "Pull requests" tab.
+3. Click the "New pull request" button.
+![new-pull-request](new-pull-request.png)
+4. Select the branch you want to merge into the main branch (the base branch) and the branch
+   containing your changes (the compare branch).
+![compare-pull-request](compare-pull-request.png)
+5. Click the branch that you want to merge from at the bottom of the page. 
+![compare-pull-request2](compare-pull-request2.png)
+6. Click the "Create pull request" button.
+![open-pull-request](open-pull-request.png)
+7. Add a title and description for your pull request, explaining the changes you made and why
+   they are important.
+8. Choose reviewers on the right side of the page if you want specific people to review your changes.
+    (In Alice's case, she would choose Bob as a reviewer.)
+8. Click the "Create pull request" button to submit your pull request.
+
+## Reviewing a Pull Request
+
+Once a pull request is created, collaborators can review the changes and provide feedback. To
+review a pull request on GitHub, follow these steps:
+
+1. Navigate to the repository on GitHub and click on the "Pull requests" tab.
+2. Click on the pull request you want to review.
+3. Review the changes made in the pull request by looking at the "Files changed" tab.
+4. Leave comments on specific lines of code by clicking the "+" icon next to the line number.
+5. If you have suggestions for changes, you can leave comments in the pull request discussion
+   thread.
+6. Once you are satisfied with the changes, you can approve the pull request by clicking the
+   "Review changes" button and selecting "Approve".
+
+![review-pull-request](review-pull-request.png)
+
+## Conclusion
+
+In this chapter, we have explored how to use Git and GitHub for collaboration on software projects.
+We have learned how to add collaborators to a repository, use the feature branch workflow, create
+pull requests, and review code changes. By following these best practices, you can effectively
+collaborate with others and contribute to shared codebases using Git and GitHub.
