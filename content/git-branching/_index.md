@@ -13,11 +13,9 @@ Git Branching and Merging
 ### Learning Objectives:
 
 - I can create a feature branch from main and move between branches.
-- I can use the git diff command to compare the code in two branches line by line
-- I can merge a feature branch into main on my local machine.
-- I can open a pull request into main on GitHub and merge that feature branch, closing the PR.
-- I can update my local main branch with the merged code from the remote repository.
+- I can merge a feature branch into main
 - I can engage in branching, committing, and merging best practices
+- I can resolve merge conflicts.
 
 ## Introduction
 
@@ -60,24 +58,29 @@ branches come in handy.  A branch let's us start from the current point of the `
 and create a new line of development that can diverge from the `main` branch, while keeping
 the `main` branch intact, and letting is switch back to it at any time.
 
-Let's create a new branch.  For learning, you may want to copy one of your existing project folders
-that has been commited to Git and start working in that copy.  You can copy the folder using
-the command line or your file explorer (You do not need to do anything special to copy a Git
-repository, just copy the folder as you would any other folder).
+## Creating a Branch
 
 Once you load the project in VS Code, click on the "Source Control" icon in the left sidebar
 to open the Source Control pane.  This should be familiar to you from previous chapters.
 
-Right now, your project has only one branch, `main`, which is the default branch that
-Git creates when you initialize a new repository.  To create a new branch, click the "..." menu
-in the Source Control pane, and then select "Branch" and then "Create Branch...".
+By default, a new project that has been added to git has only one branch, `main`, which is the
+default branch that Git creates when you initialize a new repository.  To create a new branch:
+
+1. Click the "Source Control" icon in the left sidebar to open the Source Control pane.
+2. Click the "..." menu next to the "Changes" section header 
+3. Click "Branch"
+4. Click "Create Branch..."
+5. Enter a name for your new branch that reflects the work that you will do on this branch
+(for this example, we'll use the name `feature-branch`) and press Enter.
 
 ![create-branch.png](create-branch.png)
 
-Enter a name for your new branch, such as `feature-branch`, and press Enter.  This will create
-a new branch that points to the same commit as the `main` branch.  If you look at the graph pane
-below the "Changes" section, you will see that it is now showing `feature-branch` instead of `main`.
-This is because when we create a new branch, Git automatically switches us to that branch.
+This will create a new branch that points to the same commit as the `main` branch.  If you look at
+the graph pane below the "Changes" section, you will see that it is now showing `feature-branch`
+instead of `main`. This is because when we create a new branch, Git automatically switches us to
+that branch.
+
+## Switching Between Branches
 
 You can switch back to `main` by clicking the "..." menu again, selecting "Checkout To..", and then
 selecting `main`.  This will switch you back to the `main` branch, and the graph will update to
@@ -93,6 +96,8 @@ gitGraph
     branch feature-branch
     checkout feature-branch
 ```
+
+## Making Changes on a Branch
 
 Where branches get interesting is when you start making changes on the new branch.  When you
 make a new commit on the `feature-branch`, the `feature-branch` bookmark moves forward to point
@@ -142,6 +147,22 @@ gitGraph
     commit id: "Fixed a bug"
     commit id: "Updated docs" type: HIGHLIGHT
 ```
+
+## Improving the View of the Graph
+
+The graph view in the Source Control pane can be a bit hard to read, especially as the history
+of the repository gets more complex.  To improve the view of the graph, you can click
+the "Auto" button and change it to "All."  This will show all branches in the graph, making it easier
+to see the full history of the repository.
+
+![graph-view](graph-view.png)
+
+![graph-view-all](graph-view-all.png)
+
+> [!NOTE]
+> You can now also switch branches by right-clicking on a branch in the graph and selecting "Checkout <branch-name>".
+
+## Creating More Branches
 
 We can create more branches in the same way.  Before we do so, however, it's important to make sure
 that we are on the branch we want to create the new branch from.  If we are on `main`, then the new
