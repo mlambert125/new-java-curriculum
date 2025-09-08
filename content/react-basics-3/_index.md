@@ -14,5 +14,6 @@ React Basics
 
 - I can incorporate JSX syntax in my React components.
 - I can explain the role of props in React components.
+- I can use conditional rendering.
 - I can create multiple instances of a reusable component using the `map()` function.
 
