@@ -1,9 +1,10 @@
 {
+    inputs = {
+        nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    };
     outputs = { self, nixpkgs }: {
-        devShell.x86_64-linux = let
-            pkgs = import nixpkgs { system = "x86_64-linux"; };
-        in pkgs.mkShell {
-            buildInputs = with pkgs; [
+        devShell.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+            buildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
                 hugo
             ];
         };
