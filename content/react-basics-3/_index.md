@@ -278,8 +278,176 @@ and the `expressionIfFalse` is `<EveningGreeting />`.
 
 ### Passing Data with Props
 
-### Creating a User Display Component
+In addition to conditional rendering, we can also pass data to our components using props.
+Props (short for "properties") are a way to pass data from a parent component to a child component.
+Let's modify our `Greeting` component to accept a `name` prop and display a personalized greeting message.
+First, update the `Greeting.jsx` file to accept a `name` prop:
 
-### Creating Multiple Instances of a Component with `map()`
+```jsx
+import React from 'react';
+const Greeting = ({ name }) => {
+    return <h1 className="greeting">Good Morning, {name}!</h1>;
+};
+export default Greeting;
+```
 
+We define properties for a component by creating an object parameter in the function definition,
+and then creating named properties for that object.  In this case, we created a `name` property
+by using destructuring assignment in the function parameter list.
 
+Once we have defined a prop in this way, we can use it within the component's JSX code.
+
+Now, update the `App.jsx` file to pass a `name` prop to the `Greeting` component:
+
+```jsx
+import React from 'react';
+import Greeting from './Greeting';
+import EveningGreeting from './EveningGreeting';
+
+const App = () => {
+    const currentHour = new Date().getHours();
+    const isMorning = currentHour < 12;
+    const userName = 'Alice'; // You can change this to any name you like
+
+    return (
+        <div>
+            {isMorning ? <Greeting name={userName} /> : <EveningGreeting />}
+        </div>
+    );
+};
+export default App;
+```
+
+In this code, we define a `userName` variable and pass it as a prop to the `Greeting`
+component when it is rendered.  We pass properties to a component by adding attributes
+to the component's JSX tag. In this case, we added a `name` attribute to the
+`<Greeting />` tag and set its value to the `userName` variable.
+
+Now save all files and refresh the web page in your browser.  You should see a personalized
+greeting message that includes the name you specified in the `userName` variable.
+
+### Creating Multiple Instances of a Component
+
+We can use props to create multiple instances of a component with different data.
+Let's modify our `App` component to display a list of greetings for multiple users.
+
+First, update the `App.jsx` file to include a list of user names and render a `Greeting` component for each name:
+
+```jsx
+import React from 'react';
+import Greeting from './Greeting';
+import EveningGreeting from './EveningGreeting';
+
+const App = () => {
+    const currentHour = new Date().getHours();
+    const isMorning = currentHour < 12;
+
+    return (
+        <div>
+            <Greeting name="Alice" />
+            <Greeting name="Bob" />
+            <Greeting name="Charlie" />
+        </div>
+    );
+};
+export default App;
+```
+
+In this code, we render three instances of the `Greeting` component, each with a different
+`name` prop.  This will display three personalized greeting messages on the page.
+
+Now save all files and refresh the web page in your browser.  You should see three
+greeting messages, one for each name.
+
+### Using `map()` to Render Multiple Components Based on an Array
+
+Usually when we want to render multiple instances of a component, we have a list of data
+that corresponds to the components we want to create.  In this case, we can use the `map()` function
+to iterate over the list and create a component for each item in the list.
+
+`map` in javascript is used to transform an array of data into a new array of data.  In
+this case, we want to transform an array of names into an array of `Greeting` components.
+
+Let's modify our `App` component to use `map()` to render a list of greetings for multiple users.
+
+Update the `App.jsx` file to include an array of user names and use `map()` to render a 
+`Greeting` component for each name:
+
+```jsx
+import React from 'react';
+import Greeting from './Greeting';
+import EveningGreeting from './EveningGreeting';
+
+const App = () => {
+    const currentHour = new Date().getHours();
+    const isMorning = currentHour < 12;
+    const userNames = ['Alice', 'Bob', 'Charlie', 'Diana'];
+
+    return (
+        <div>
+            {{ userNames.map((name) => <Greeting key={name} name={name} />) }}
+        </div>
+    );
+};
+export default App;
+```
+
+In this code, we define an array of user names and use the `map()` function to convert
+the array of names into an array of `Greeting` components.  Each component is passed a `name` prop
+with the corresponding name from the array.
+
+Now save all files and refresh the web page in your browser.  You should see a list of
+greeting messages, one for each name in the `userNames` array.
+
+### Expression-Based Approach
+
+React uses a functional/expression-based approach to building user interfaces.
+
+As you have probably noticed, this means that we use the functional versions of 
+control structures like `if` statements and loops rather than the statement-based
+versions.
+
+- We don't use `if` statements to conditionally render components; instead, we use
+the ternary operator.
+- We don't use `for` loops to iterate over arrays to create multiple components;
+instead, we use the `map()` function.
+- We don't use `switch` statements to choose between multiple components to render;
+instead, we can use chained ternary operators or helper functions that return
+the desired component.
+
+### The Magic of React and Vite
+
+At this point, this way of creating an application probably seems a bit strange and
+a bit magical.  With native javascript, HTML, and CSS, our code all loads and runs
+in an *imperative* way.  We write code that tells the browser *how* to do things
+step-by-step.  With a React application, we write *declarative* code that describes
+*what* we want the UI to look like based on the current state of the application.
+
+This approach is very powerful and allows us to create complex user interfaces
+with relatively little code.  However, it does require a different way of thinking
+about how to build applications.
+
+The Vite tool that we used to create our React application handles all of the
+complexity of setting up a build process that compiles our JSX code into regular
+JavaScript that the browser can understand.  React itself takes care of rendering
+the UI based on the current state of the application.
+
+A lot is happening behind the scenes to make this work, but as long as we
+use the tools and libraries that are designed to work with React, we can focus
+on writing our application code without worrying about the details of how it all
+works.
+
+### Conclusion
+
+In this chapter, you learned the basics of creating a React application using JSX,
+components, props, and conditional rendering.  You also learned how to create multiple
+instances of a component using the `map()` function.
+
+React is a powerful library for building user interfaces, and it is the industry standard
+way to build modern web applications.  Understanding and being able to use React is an
+absolutely essential skill for a modern web developer, and at most companies, it is 
+the primary way that web applications are built.
+
+In the next chapter, you will learn how to manage state in a React application, and
+how to connect your React application to a backend API to create a full-stack web application
+that allows users to create, read, update, and delete data.
