@@ -14,4 +14,5 @@ React State Management
 
 - I can manage state with the `useState` hook.
 - I can use conditional rendering, based on state, to display appropriate components.
+- I can lift state and handle events triggered in child components by passing handlers as props.
 

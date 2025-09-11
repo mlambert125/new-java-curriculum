@@ -12,4 +12,6 @@ React State Management
 
 ### Learning Objectives:
 
+- I can use forms to obtain data from a user and update state
+
 
