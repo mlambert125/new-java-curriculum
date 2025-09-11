@@ -148,7 +148,7 @@ In the `src` directory, create a new file named `Greeting.jsx` and add the follo
    import React from 'react';
 
    const Greeting = () => {
-       return <h1 className="greeting">Hello, World!</h1>;
+       return <h1 className="greeting">Good Morning!</h1>;
    };
 
    export default Greeting;
@@ -191,25 +191,90 @@ we need to import it into the `App.jsx` file and then use it within the `App` co
 
 In the `src` directory, open the `App.jsx` file and modify it to import and use the `Greeting` component:
     
-    ```jsx
-    import React from 'react';
-    import Greeting from './Greeting';
-    
-    const App = () => {
-         return (
-              <div>
-                <Greeting />
-              </div>
-         );
-    };
-    
-    export default App;
-    ```
+```jsx
+import React from 'react';
+import Greeting from './Greeting';
+
+const App = () => {
+     return (
+          <div>
+            <Greeting />
+          </div>
+     );
+};
+
+export default App;
+```
 
 Now save all files and refresh the web page in your browser.  You should now see the
 "Hello, World!" greeting in blue text.
 
 ### Conditional Rendering
+
+Let's make a new component called `EveningGreeting` that displays a different greeting message.
+Create a new file named `EveningGreeting.jsx` in the `src` directory and add the following code:
+
+```jsx
+import React from 'react';
+const EveningGreeting = () => {
+    return <h1 className="greeting">Good Evening!</h1>;
+};
+export default EveningGreeting;
+```
+
+Now we have two different greeting components, but we only want to display one of them
+based on the time of day.  We can use conditional rendering to achieve this.
+
+Open the `App.jsx` file and modify it to conditionally render either the `Greeting` or
+`EveningGreeting` component based on the current time:
+
+```jsx
+import React from 'react';
+import Greeting from './Greeting';
+import EveningGreeting from './EveningGreeting';
+
+const App = () => {
+    const currentHour = new Date().getHours();
+    const isMorning = currentHour < 12;
+
+    return (
+        <div>
+            {isMorning ? <Greeting /> : <EveningGreeting />}
+        </div>
+    );
+};
+export default App;
+```
+
+Now save all files and refresh the web page in your browser.  You should see either
+the "Good Morning!" or "Good Evening!" greeting based on the current time of day.
+
+If you want to test both greetings, you can temporarily change the `isMorning` variable
+to `true` or `false` to see the different greetings.
+
+Notice that we had to import the `EveningGreeting` component at the top of the file
+in order to use it.  This is because each file is a separate module in JavaScript
+and we need to explicitly import any code that we want to use from other modules.
+
+Let's look at the conditional rendering part of the code:
+
+```jsx
+{isMorning ? <Greeting /> : <EveningGreeting />}
+```
+
+This line uses a JavaScript ternary operator to choose which component to render based
+on the value of the `isMorning` variable.  If `isMorning` is `true`, the `Greeting` component
+is rendered; otherwise, the `EveningGreeting` component is rendered.
+
+The ternary operator, which you learned in previous chapters, is a concise way to write an `if-else` statement
+in a single line of code.  It has the following syntax:
+
+```js
+condition ? expressionIfTrue : expressionIfFalse
+```
+
+In our case, the `condition` is `isMorning`, the `expressionIfTrue` is `<Greeting />`,
+and the `expressionIfFalse` is `<EveningGreeting />`.
 
 ### Passing Data with Props
 
