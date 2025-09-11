@@ -15,3 +15,10 @@ React State Management
 - I understand the component life-cycle and can use the `useEffect` hook to perform side effects in function components.
 - I can utilize the `useEffect` hook to fetch data when a component mounts and update state with the fetched data.
 
+### Understanding the Component Life-Cycle
+
+### Using `useEffect` to Perform Side Effects
+
+### Fetching Data with `useEffect` on Component Mount
+
+
