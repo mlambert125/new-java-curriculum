@@ -15,7 +15,7 @@ React State Management
 - I understand the component life-cycle and can use the `useEffect` hook to perform side effects in function components.
 - I can utilize the `useEffect` hook to fetch data when a component mounts and update state with the fetched data.
 
-### Understanding the Component Life-Cycle
+## Understanding the Component Life-Cycle
 
 React components go through a life-cycle that includes mounting, updating, and
 unmounting phases. Understanding these phases is crucial for managing side
@@ -29,13 +29,19 @@ in the component's life-cycle.
 result of changes to either its props or state.
 3. **Unmounting**: This phase occurs when a component is being removed from the DOM.
 
-### Using `useEffect` to Perform Side Effects
+### Check for Understanding
+
+- What are the three main phases of a React component's life-cycle?
+
+    Answer: Mounting, Updating, Unmounting
+
+## Using `useEffect` to Perform Side Effects
 
 In function components, the `useEffect` hook is used to perform side effects. Side
 effects are code that we want to run every time one of the component life-cycle
 phases occurs.
 
-### Performing a Side Effect on Component Mount
+## Performing a Side Effect on Component Mount
 
 You can use the `useEffect` hook to perform a side effect when a component mounts
 for the first time. This is done by passing an empty dependency array (`[]`) as the
@@ -70,7 +76,7 @@ export default MyComponent;
 This example demonstrates how to use the `useEffect` hook to log a message when the
 component mounts.  
 
-#### Example: Fetching Data with `useEffect` on Component Mount
+### Example: Fetching Data with `useEffect` on Component Mount
 
 A more practical example is fetching data from an API when the component mounts.
 
@@ -122,13 +128,24 @@ define an async function inside it and call it immediately.  This will cause
 the async function to run in the background, and update state when it completes
 which will cause a re-render to display the pokemon.
 
-### Hooking into the Unmount Life-Cycle Event
+### Check for Understanding
+
+- How do you create a side-effect that runs once when the component mounts?
+
+    Answer: Use the `useEffect` hook with an empty dependency array (`[]`).
+
+- What is a common pattern for handling asynchronous operations in `useEffect`?
+
+    Answer: Define an async function inside the `useEffect` callback and call it immediately
+    without `await`.
+
+## Hooking into the Unmount Life-Cycle Event
 
 Sometimes, side effects need to be cleaned up when a component unmounts. This is
 done by returning a cleanup function from the `useEffect` hook. The cleanup function
 will be called when the component is about to unmount.
 
-#### Example: Logging a Message on Component Unmount
+### Example: Logging a Message on Component Unmount
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -157,7 +174,13 @@ What we have done here is create a mounted handler as before, and then returned 
 from the `useEffect` callback.  This returned function is the unmount handler, and
 will be called when the component is about to be removed from the DOM.
 
-### Performing a Side Effects on the update Life-Cycle Event 
+### Check for Understanding
+
+- How do you perform cleanup actions when a component unmounts?
+
+    Answer: Return a cleanup function from the mount-handling `useEffect` hook 
+
+## Performing a Side Effects on the update Life-Cycle Event 
 
 You can also use the `useEffect` hook to perform side effects when a component
 updates due to changes in its props or state. This is done by passing an array
@@ -196,7 +219,14 @@ We can pass any value created with `useState` or any prop passed to the componen
 in the dependency array.  This allows us to run side effects in response to changes
 in state (internally) or props (externally).
 
-### Putting it All Together (Handling all three kinds of side effects)
+### Check for Understanding
+
+- How do you create a side-effect that runs when specific state or props change?
+
+    Answer: Use the `useEffect` hook with a dependency array containing the state or
+    props to watch for changes.
+
+## Putting it All Together (Handling all three kinds of side effects)
 
 We can combine all of these handlers to have our counter component log messages when
 it mounts, updates, and unmounts:
@@ -240,7 +270,7 @@ the `count` state changes.
 This demonstrates how to effectively manage side effects in a React function component
 using the `useEffect` hook for all three phases of the component life-cycle.
 
-### Summary
+## Summary
 
 In this lesson, we explored the component life-cycle in React and how to use the
 `useEffect` hook to manage side effects during the mounting, updating, and unmounting

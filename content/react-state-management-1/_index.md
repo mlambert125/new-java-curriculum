@@ -16,7 +16,7 @@ React State Management
 - I can use conditional rendering, based on state, to display appropriate components.
 - I can lift state and handle events triggered in child components by passing handlers as props.
 
-### Component State
+## Component State
 
 So far, we have only worked with components that are static and stateless.
 The `Greeter` component we created in the previous chapter is a good example of a stateless component.
@@ -30,7 +30,7 @@ A stateful component is one that manages its own state and can change its output
 State is typically used to manage data that can change over time, such as user input,
 the results of an API call, etc.
 
-### A Stateful Counter Component with  `useState`
+## A Stateful Counter Component with  `useState`
 
 Let's create a counter component.  This component will display a number, and
 two buttons that will allow the user to increment or decrement the number.
@@ -137,7 +137,17 @@ telling the component to re-render.  React knows that our component is dependent
 on the state variable `count`, and will automatically re-render the component
 whenever the state is updated.
 
-### Conditional Rendering Based on State
+### Check for Understanding
+
+1. What is the purpose of the `useState` hook in React?
+
+    Answer: The `useState` hook allows us to add state to a functional component.
+
+2. What are the two elements returned by the `useState` hook?
+
+    Answer: A variable that holds the current state value, and a function to update the state value.
+
+## Conditional Rendering Based on State
 
 Let's modify our counter component to display a message when the count reaches a certain
 value.  For example, we can display a message when the count reaches 10.
@@ -174,7 +184,13 @@ reaches 10.  You should see the message displayed when the count reaches 10.
 See if you can modify the component to continue displaying the message when the count
 is greater than 10, and hide the message when the count is less than 10.
 
-### Lifting State to the Parent Component 
+### Check for Understanding
+
+1. How can you conditionally render a component based on state in React?
+
+    Answer: Using a ternary operator expression.
+
+## Lifting State to the Parent Component 
 
 Sometimes, we want to share state between components.  For example, we might have three
 of our counters on the page and we want to have them all share the same count value.
@@ -236,7 +252,18 @@ If you run the application now, you should see three counters on the page that a
 share the same count value.  Clicking the Increment or Decrement buttons on any of
 the counters will update the count value for all of them.
 
-### Computed State
+### Check for Understanding
+
+1. What does it mean to "lift state" in React?
+
+    Answer: Moving state management from a child component to a parent component
+    so that the state can be shared between multiple child components.
+
+2. How do you pass state and state update functions to child components?
+
+    Answer: By passing them as props.
+
+## Computed State
 
 Let's say we want to go back to having separate counts for each counter, but we also want to
 display the total count of all counters in the `App` component.
@@ -299,7 +326,13 @@ All that we had to do was add an expression in curly braces to compute the total
 If you run the application now, you should see three counters on the page that each
 have their own count value, and a total count that is the sum of all three counts.
 
-### Handling Events From the Parent Component
+### Check for Understanding
+
+1. How can you compute derived state in a React component?
+
+    Answer: By using expressions in curly braces to compute values based on existing state.
+
+## Handling Events From the Parent Component
 
 In the example above, we passed a variable down to the `Counter` component, which is
 something we've done before.  But we also passed a function down to the `Counter` component,
@@ -371,7 +404,17 @@ If we run the application now, we should see our fancy buttons instead of the re
 HTML buttons.  The buttons should still work the same way, because we are passing
 the same `onClick` functions to the `FancyButton` components.
 
-### Bringing It All Together to Add a Reset Button
+### Check for Understanding
+
+1. How can you pass event handlers to child components in React?
+
+    Answer: By passing functions as props to the child components.
+
+2. How does the child component use the event handler passed from the parent?
+
+    Answer: By calling the function when the event occurs (e.g., in an `onClick` handler).
+
+## Bringing It All Together to Add a Reset Button
 
 Now, let's modify our `App` component to add a reset button that will reset all
 the counters to 0.  We will use our `FancyButton` component for this button
@@ -409,7 +452,13 @@ Here, we have added a `resetCounts` function inside of our component function
 that resets all of the counts by calling the `setCount` functions to set
 all the counts to 0.
 
-### Conclusion
+### Check for Understanding
+
+1. How can you create a reusable button component in React?
+
+    Answer: By creating a new component that accepts props for customization, such as `onClick` and `text`.
+
+## Conclusion
 
 In this chapter, we learned how to manage state in React components using the `useState` hook.
 We also learned how to use conditional rendering based on state to display appropriate components.

@@ -18,7 +18,7 @@ React Basics
 - I can explain the role of props in React components.
 - I can create multiple instances of a reusable component using the `map()` function.
 
-### What is JSX?
+## What is JSX?
 
 As you've learned from working with native frameworkless JavaScript, HTML and JavaScript
 are two different languages with a border between them.  This sometimes becomes inconvenient
@@ -71,7 +71,7 @@ const Greeting = () => {
 ReactDOM.render(<Greeting/>, document.getElementById('messageContainer'));
 ```
 
-#### Compiling JSX
+### Compiling JSX
 
 JSX is not valid JavaScript, so it needs to be compiled into regular JavaScript before it can
 be executed by the browser.  This is typically done using a set of tools to "build" our application
@@ -83,7 +83,18 @@ tools to compile our JSX code into regular JavaScript.  As long as we use the te
 Vite, and the `npm run dev` command to run our application, we don't need to worry about the details
 of how JSX is compiled.
 
-### Creating and Clearing a new React Project with Vite
+### Check for Understanding
+
+- What is JSX?
+
+    Ansewr: JSX is a syntax extension for JavaScript that allows developers to write HTML-like
+    code within JavaScript files. 
+
+- How does JSX differ from regular JavaScript and HTML?
+
+    Answer: JSX allows you to write HTML and JavaScript together in the same file.
+
+## Creating and Clearing a new React Project with Vite
 
 In previous chapters, you learned how to create a React project using Vite.  From this point forward,
 we will use this method, but for new projects, we will generally want to also remove the example styles and
@@ -92,7 +103,7 @@ components that Vite includes by default.  Here are the steps to do that:
 1. Create a new React project with Vite if you haven't already:
 
    ```bash
-   npm create vite@latest my-react-app -- --template react
+   npm create vite@latest
    cd my-react-app
    npm install
    ```
@@ -126,8 +137,17 @@ components that Vite includes by default.  Here are the steps to do that:
 8. Save all files and refresh the web page in your browser.  You should now see a blank
    page with just the "My React App" heading in the boring default font and style.
 
+### Check for Understanding
 
-### Creating a Greeting JSX Component
+- What command do you use to create a new React project with Vite?
+
+    Answer: `npm create vite@latest`
+
+- How do you start the development server for a React project created with Vite?
+
+    Answer: `npm run dev`
+
+## Creating a Greeting JSX Component
 
 Now that we have a clean React project, we can start adding our own components using JSX.
 Take a look at the `App.jsx` file that we just created.  Notice that this is a `jsx` file
@@ -209,7 +229,19 @@ export default App;
 Now save all files and refresh the web page in your browser.  You should now see the
 "Hello, World!" greeting in blue text.
 
-### Conditional Rendering
+### Check for Understanding
+
+- How do you create a new React component using JSX?
+
+    Answer: Create a new `.jsx` file, define a functional component that returns JSX code,
+    and export the component.
+
+- How do you use a React component in another component?
+
+    Answer: Import the component using an `import` statement and then use it as a JSX tag
+    within the parent component's JSX code.
+
+## Conditional Rendering
 
 Let's make a new component called `EveningGreeting` that displays a different greeting message.
 Create a new file named `EveningGreeting.jsx` in the `src` directory and add the following code:
@@ -276,7 +308,18 @@ condition ? expressionIfTrue : expressionIfFalse
 In our case, the `condition` is `isMorning`, the `expressionIfTrue` is `<Greeting />`,
 and the `expressionIfFalse` is `<EveningGreeting />`.
 
-### Passing Data with Props
+### Check for Understanding
+
+- How do you conditionally render components in React?
+
+    Answer: Use a JavaScript expression, such as the ternary operator, within curly braces
+    in the JSX code to choose which component to render based on a condition.
+
+- What is the syntax of the ternary operator?
+
+    Answer: `condition ? expressionIfTrue : expressionIfFalse`
+
+## Passing Data with Props
 
 In addition to conditional rendering, we can also pass data to our components using props.
 Props (short for "properties") are a way to pass data from a parent component to a child component.
@@ -326,7 +369,16 @@ to the component's JSX tag. In this case, we added a `name` attribute to the
 Now save all files and refresh the web page in your browser.  You should see a personalized
 greeting message that includes the name you specified in the `userName` variable.
 
-### Creating Multiple Instances of a Component
+### Check for Understanding
+
+- How do you define and use props in a React component?
+
+    Answer: Add a deconstructed object parameter to the component function definition.
+
+- How do you pass props to a React component?
+    Answer: Add attributes to the component's JSX tag with the desired prop names and values.
+
+## Creating Multiple Instances of a Component
 
 We can use props to create multiple instances of a component with different data.
 Let's modify our `App` component to display a list of greetings for multiple users.
@@ -359,7 +411,13 @@ In this code, we render three instances of the `Greeting` component, each with a
 Now save all files and refresh the web page in your browser.  You should see three
 greeting messages, one for each name.
 
-### Using `map()` to Render Multiple Components Based on an Array
+### Check for Understanding
+
+- How do you create multiple instances of a React component with different data?
+
+    Answer: Render the component multiple times with different props.
+
+## Using `map()` to Render Multiple Components Based on an Array
 
 Usually when we want to render multiple instances of a component, we have a list of data
 that corresponds to the components we want to create.  In this case, we can use the `map()` function
@@ -399,7 +457,14 @@ with the corresponding name from the array.
 Now save all files and refresh the web page in your browser.  You should see a list of
 greeting messages, one for each name in the `userNames` array.
 
-### Expression-Based Approach
+### Check for Understanding
+
+- How do you use the `map()` function to render multiple instances of a React component?
+
+    Answer: Use the `map()` function to iterate over an array of data and return a component
+    for each item in the array.
+
+## Expression-Based Approach
 
 React uses a functional/expression-based approach to building user interfaces.
 
@@ -415,7 +480,14 @@ instead, we use the `map()` function.
 instead, we can use chained ternary operators or helper functions that return
 the desired component.
 
-### The Magic of React and Vite
+### Check for Understanding
+
+- Why does React use an expression-based approach to building user interfaces?
+
+    Answer: It allows for a more declarative style of programming, making it easier
+    to understand and reason about the UI based on the current state of the application.
+
+## The Magic of React and Vite
 
 At this point, this way of creating an application probably seems a bit strange and
 a bit magical.  With native javascript, HTML, and CSS, our code all loads and runs
@@ -437,7 +509,15 @@ use the tools and libraries that are designed to work with React, we can focus
 on writing our application code without worrying about the details of how it all
 works.
 
-### Conclusion
+### Check for Understanding
+
+- What is the difference between imperative and declarative programming?
+
+    Answer: Imperative programming focuses on *how* to do things step-by-step,
+    while declarative programming focuses on *what* the desired outcome is
+    based on the current state.
+
+## Conclusion
 
 In this chapter, you learned the basics of creating a React application using JSX,
 components, props, and conditional rendering.  You also learned how to create multiple

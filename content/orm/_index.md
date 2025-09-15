@@ -108,6 +108,21 @@ query and manipulate the data in the database using those classes.  As users, we
 just call normal java methods on our objects, and the ORM takes care of generating
 and executing an appropriate SQL query to retrieve the data from the database. 
 
+### Check for Understanding
+
+- What is the main difference between how data is modeled in a relational
+  database versus an object-oriented programming language like Java?
+
+    Answer: Relational databases use tables with rows and columns to store data,
+    while object-oriented programming languages use classes with fields and methods
+    to model data.
+
+- What is the purpose of an ORM?
+
+    Answer: An ORM automates the process of mapping data between relational
+    databases and object-oriented programming languages, allowing developers to
+    work with database data using familiar object-oriented concepts and methods.
+
 ## Hibernate and JPA
 
 [JPA](https://en.wikipedia.org/wiki/Java_Persistence_API) (Java Persistence API) is a
@@ -133,6 +148,16 @@ In the previous chapter, we used Hibernate as our JPA implementation to connect
 our Spring application to a MySQL database.  We used JPA annotations to define
 an `User` entity, and a `JpaRepository` to perform CRUD operations on the `User`
 table in the database.
+
+### Check for Understanding
+
+- What is JPA?
+
+    Answer: JPA (Java Persistence API) is a specification for ORM in Java 
+
+- What is Hibernate?
+
+    Answer: Hibernate is an implementation of the JPA specification
 
 ## Setting up a Spring Project to use Hibernate
 
@@ -164,6 +189,20 @@ Once we have added these dependencies and configured the database connection, we
 can start using Hibernate in our Spring project.  Our Spring project now knows
 what kind of database we are using, where the database is located, and how to
 connect to it.
+
+### Check for Understanding
+
+- What dependencies do we need to add to our `pom.xml` file to use Hibernate
+  in a Spring project?
+
+    Answer: We need to add the `spring-boot-starter-data-jpa` and
+    `mysql-connector-java` dependencies.
+
+- What properties do we need to configure in our `application.properties` file
+    to connect to a MySQL database?
+
+    Answer: We need to configure the `spring.datasource.url`,
+    `spring.datasource.username`, and `spring.datasource.password` properties.
 
 ## Creating a Model and Repository Class
 
@@ -232,6 +271,23 @@ Hibernate, and we just get a simple and short interface definition in our code.
 Now that we have a model class and a repository interface, we can use the repository
 to perform CRUD operations on the `User` table in the database.
 
+### Check for Understanding
+
+- What is the purpose of the `@Entity` annotation?
+
+    Answer: The `@Entity` annotation indicates that a class is a JPA entity and
+    should be mapped to a database table.
+
+- What annotation do we use to indicate the primary key of a JPA entity?
+
+    Answer: We use the `@Id` annotation to indicate the primary key of a JPA entity.
+
+- What is the purpose of the `JpaRepository` interface?
+
+    Answer: The `JpaRepository` interface provides a set of methods for performing
+    CRUD operations on a JPA entity.
+
+
 ## Accessing the Repository from a Spring-managed Class
 
 To get an instance of the `UserRepository`, we can use Spring's dependency injection
@@ -284,6 +340,16 @@ public class UserController {
 
 And with very little code and effort, we now have a REST endpoint that
 returns all users from the `User` table in the database.
+
+### Check for Understanding
+
+- How do we get an instance of the `UserRepository` in a Spring-managed class?
+
+    Answer: Dependency injection using the `@Autowired` annotation.
+
+- What method do we use to get all users from the `User` table in the database?
+
+    Answer: We use the `findAll()` method provided by the `JpaRepository` interface.
 
 ## Modeling relationships with JPA Annotations
 
@@ -405,6 +471,20 @@ into the `Address` table, and set the foreign key fields appropriately.
 This doesn't usually come up in REST apis as we are often dealing with
 one table at a time, but it is a very useful feature when dealing with
 more complex data structures or APIs.
+
+
+### Check for Understanding
+
+- How do we model a one-to-many relationship between two JPA entities?
+
+    Answer: We use the `@OneToMany` annotation on the "one" side of the
+    relationship, and the `@ManyToOne` annotation on the "many" side of the
+    relationship.
+
+- What annotation do we use to specify the foreign key column in a JPA entity?
+
+    Answer: We use the `@JoinColumn` annotation to specify the foreign key
+    column in a JPA entity.
 
 ## Summary
 

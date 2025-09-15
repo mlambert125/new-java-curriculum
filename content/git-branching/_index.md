@@ -58,6 +58,16 @@ branches come in handy.  A branch let's us start from the current point of the `
 and create a new line of development that can diverge from the `main` branch, while keeping
 the `main` branch intact, and letting is switch back to it at any time.
 
+### Check for Understanding
+
+- What is a branch in Git?
+  
+  Answer: A branch is a bookmark to a specific commit in the history of a repository.
+
+- What is the default branch in a new Git repository?
+
+    Answer: The default branch is `main` (or `master` in some older repositories).
+
 ## Creating a Branch
 
 Once you load the project in VS Code, click on the "Source Control" icon in the left sidebar
@@ -79,6 +89,16 @@ This will create a new branch that points to the same commit as the `main` branc
 the graph pane below the "Changes" section, you will see that it is now showing `feature-branch`
 instead of `main`. This is because when we create a new branch, Git automatically switches us to
 that branch.
+
+### Check for Understanding
+
+- What command do you use to create a new branch in Git?
+
+    Answer: `git branch <branch-name>` or through the VS Code interface as described above.
+
+- What happens to the current branch when you create a new branch?
+
+    Answer: Git automatically switches to the new branch.
 
 ## Switching Between Branches
 
@@ -147,6 +167,16 @@ gitGraph
     commit id: "Fixed a bug"
     commit id: "Updated docs" type: HIGHLIGHT
 ```
+
+### Check for Understanding
+
+- What happens to the commit history when you make a new commit on a branch?
+
+    Answer: The branch you are on moves forward to point to the new commit, while other branches remain unchanged.
+
+- How can you switch between branches in Git?
+
+    Answer: You can use the command `git checkout <branch-name>` or use the VS Code interface as described above.
 
 ## Improving the View of the Graph
 
@@ -287,6 +317,16 @@ Once you have resolved all of the merge conflicts and committed the changes, the
 and the `main` branch now contains all of the changes from the `feature-branch`.
 
 ![merge-complete.png](merge-complete.png)
+
+### Check for Understanding
+
+- What is a merge conflict in Git?
+
+    Answer: A merge conflict occurs when the same lines of code were changed in both branches being merged, and Git cannot automatically determine which change to keep.
+
+- How do you resolve a merge conflict in Visual Studio Code?
+
+    Answer: Open the files with conflicts, use the interface to choose which changes to keep, stage the changes, and commit the merge.
 
 ## Branching and Merging in the Real World
 

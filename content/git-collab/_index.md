@@ -57,6 +57,18 @@ To add collaborators to your GitHub repository, follow these steps:
 Remember to communicate with your collaborators about the workflow and guidelines for contributing
 to the project to ensure a smooth collaboration process.
 
+### Check for Understanding
+
+- What are the steps to add a collaborator to a GitHub repository?
+
+    Answer: Navigate to the repository on GitHub, click on the "Settings" tab, select "Collaborators"
+    from the left sidebar, click "Add people", select the user from the dropdown list, and click
+    "Add collaborator".
+
+- What must a user do to gain access to a repository after being added as a collaborator?
+
+    Answer: The user must accept the email invitation sent by GitHub to gain access to the repository.
+
 ## Feature Branch Workflow
 
 A common workflow for collaborating on a Git project is the feature branch workflow. In this
@@ -132,11 +144,34 @@ easy code reviews and integration of new features.
 You already know how to do most of these steps from previous chapters, but let's take a closer look
 at the steps involved in creating and reviewing a pull request on GitHub.
 
+### Check for Understanding
+
+- What is the purpose of creating a separate branch for each feature or bug fix in the feature
+branch workflow?
+
+    Answer: Creating separate branches allows multiple people to work on different features
+    simultaneously without interfering with each other's work.
+
+- What are the steps involved in the feature branch workflow for collaborating on a Git project?
+
+    Answer: The steps are: Clone the repository, create a new branch, make changes, stage and commit changes,
+    push the branch to GitHub, open a pull request, code review, merge the pull request, delete the feature branch,
+    and update the local main branch.
+
 ## Creating a Pull Request
 
 A pull request (PR) is a way to propose changes to a codebase and request that those changes be
 reviewed and merged into the main branch. Pull requests are a key feature of GitHub and
 facilitate collaboration and code review.
+
+A pull request always refers to a specific branch in a repository.  In the feature branch workflow, a pull
+request is created to merge a feature branch into the main branch.  The branch related to the pull request
+should be as small as possible while still being a complete unit of work.  This makes it easier for
+reviewers to understand and review the changes.
+
+The title of a pull request should be concise and descriptive, summarizing the changes made. The description
+should provide more detail about the changes, why they were made, and any relevant context or
+information for reviewers.
 
 To create a pull request on GitHub, follow these steps:
 
@@ -157,6 +192,19 @@ To create a pull request on GitHub, follow these steps:
     (In Alice's case, she would choose Bob as a reviewer.)
 8. Click the "Create pull request" button to submit your pull request.
 
+### Check for Understanding
+
+- How big should a pull request be?
+
+    Answer: A pull request should be as small as possible while still being a complete unit of work.
+    This makes it easier for reviewers to understand and review the changes.
+
+- What information should you include in the title and description of a pull request?
+
+    Answer: The title should be concise and descriptive, summarizing the changes made. The description
+    should provide more detail about the changes, why they were made, and any relevant context or
+    information for reviewers.
+
 ## Reviewing a Pull Request
 
 Once a pull request is created, collaborators can review the changes and provide feedback. To
@@ -170,6 +218,18 @@ review a pull request on GitHub, follow these steps:
    thread.
 6. Once you are satisfied with the changes, you can approve the pull request by clicking the
    "Review changes" button and selecting "Approve".
+
+### Check for Understanding
+
+- How do you leave comments on specific lines of code in a pull request?
+
+    Answer: You can leave comments on specific lines of code by clicking the "+" icon next to the
+    line number in the "Files changed" tab of the pull request.
+
+- How do you approve a pull request after reviewing it?
+
+    Answer: You can approve a pull request by clicking the "Review changes" button and selecting
+    "Approve".
 
 ![review-pull-request](review-pull-request.png)
 
